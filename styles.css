@@ -248,3 +248,8 @@ section{padding:84px 0}
   .menu-cat li.has-img{gap:10px}
   .menu-cat li .nm{line-height:1.3}
 }
+
+/* v5: per-item Square order links */
+.item-order{flex:0 0 auto;margin-left:6px;font-family:var(--cond);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--charcoal);background:var(--sun);border-radius:999px;padding:3px 10px;line-height:1.4;align-self:center;margin-right:4px;transition:background .15s}
+.item-order:hover,.item-order:focus-visible{background:var(--sun-2)}
+@media (max-width:620px){.item-order{font-size:.72rem;padding:3px 8px;margin-left:4px}}
