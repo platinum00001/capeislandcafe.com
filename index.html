@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cape Island Café | A Recovery Café in Falmouth, MA</title>
+<meta name="description" content="Cape Island Café is a welcoming Recovery Café at 316 Gifford St in Falmouth, Cape Cod: good coffee, good food, and a community that supports recovery. Opening soon.">
+<meta name="theme-color" content="#1f4e5f">
+<meta property="og:title" content="Cape Island Café | A Recovery Café in Falmouth, MA">
+<meta property="og:description" content="A welcoming community space on Cape Cod with coffee, food, and recovery support.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://capeislandcafe.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f4e5f'/%3E%3Cpath d='M16 28h26v8a13 13 0 0 1-26 0z' fill='%23f6efe4'/%3E%3Cpath d='M42 30h3a5 5 0 0 1 0 10h-4' fill='none' stroke='%23f6efe4' stroke-width='3'/%3E%3Cpath d='M23 22c0-3 3-3 3-6M31 22c0-3 3-3 3-6' stroke='%23e9a46a' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sea:#1f4e5f; --sea-deep:#143642; --sand:#f6efe4; --sand-2:#efe4d2; --coral:#e07a5f; --amber:#e9a46a; --ink:#24323a; --muted:#5c6b72;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Nunito Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--sand);line-height:1.65;font-size:17px}
+  h1,h2,h3{font-family:"Fraunces",Georgia,"Times New Roman",serif;line-height:1.15;color:var(--sea-deep)}
+  a{color:var(--sea)}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  /* nav */
+  header.nav{position:absolute;top:0;left:0;right:0;z-index:5}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:22px}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--sand);text-decoration:none;font-family:"Fraunces",serif;font-weight:600;font-size:1.25rem}
+  .brand svg{width:34px;height:34px}
+  nav ul{display:flex;gap:26px;list-style:none}
+  nav a{color:var(--sand);text-decoration:none;font-weight:600;font-size:.95rem;opacity:.9}
+  nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+  /* hero */
+  .hero{position:relative;background:linear-gradient(180deg,#143642 0%,#1f4e5f 55%,#2c6a7a 100%);color:var(--sand);padding:150px 0 170px;overflow:hidden;text-align:center}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 22%,rgba(233,164,106,.45),transparent 28%)}
+  .sun{position:absolute;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,#f3c58f,#e9a46a);top:70px;right:12%;opacity:.85;filter:blur(.5px)}
+  .hero .wrap{position:relative;z-index:2}
+  .eyebrow{display:inline-block;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;background:rgba(246,239,228,.12);border:1px solid rgba(246,239,228,.25);padding:7px 14px;border-radius:999px;margin-bottom:22px}
+  .hero h1{color:var(--sand);font-size:clamp(2.6rem,6vw,4.6rem);font-weight:700;max-width:820px;margin:0 auto 20px}
+  .hero h1 em{font-style:italic;color:#f3c58f;font-weight:600}
+  .hero p.lead{font-size:clamp(1.05rem,2vw,1.25rem);max-width:640px;margin:0 auto 34px;opacity:.92}
+  .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--coral);color:#fff;box-shadow:0 8px 24px rgba(224,122,95,.35)}
+  .btn-ghost{border:2px solid rgba(246,239,228,.6);color:var(--sand)}
+  .waves{position:absolute;bottom:-1px;left:0;width:100%;height:120px;z-index:1}
+  /* sections */
+  section{padding:90px 0}
+  .section-title{text-align:center;max-width:680px;margin:0 auto 50px}
+  .section-title .kicker{color:var(--coral);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem}
+  .section-title h2{font-size:clamp(2rem,4vw,2.8rem);margin:10px 0 14px}
+  .section-title p{color:var(--muted)}
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .about-grid h2{font-size:clamp(2rem,4vw,2.7rem);margin:10px 0 18px}
+  .about-grid p{margin-bottom:16px;color:#3c4a51}
+  .quote{background:var(--sea);color:var(--sand);border-radius:24px;padding:40px 36px;position:relative;box-shadow:0 20px 50px rgba(20,54,66,.25)}
+  .about-grid .quote p{color:var(--sand);margin:0;font-family:"Fraunces",serif;font-size:1.45rem;line-height:1.4;font-style:italic}
+  .quote small{display:block;margin-top:18px;opacity:.8;font-size:.9rem;letter-spacing:.04em}
+  .quote::before{content:"\201C";position:absolute;top:-30px;left:24px;font-family:"Fraunces",serif;font-size:7rem;color:var(--amber);line-height:1}
+  .offer{background:#fff}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .card{background:var(--sand);border-radius:20px;padding:30px 24px;border:1px solid var(--sand-2);transition:transform .2s ease,box-shadow .2s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(20,54,66,.12)}
+  .card .ico{width:52px;height:52px;border-radius:14px;background:var(--sea);display:grid;place-items:center;margin-bottom:18px}
+  .card .ico svg{width:28px;height:28px;stroke:var(--sand);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:1.25rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.97rem}
+  .visit-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:stretch}
+  .info{background:#fff;border-radius:24px;padding:36px;border:1px solid var(--sand-2)}
+  .info h3{font-size:1.5rem;margin-bottom:6px}
+  .info .row{display:flex;gap:14px;padding:18px 0;border-bottom:1px dashed var(--sand-2)}
+  .info .row:last-of-type{border-bottom:0}
+  .info .row svg{flex:0 0 24px;width:24px;height:24px;stroke:var(--coral);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:3px}
+  .info .label{font-weight:700;color:var(--sea-deep)}
+  .info .val{color:var(--muted)}
+  .pill{display:inline-block;background:var(--sand-2);color:var(--sea-deep);font-weight:700;font-size:.82rem;padding:4px 12px;border-radius:999px;margin-top:4px}
+  .map{border-radius:24px;overflow:hidden;min-height:380px;border:1px solid var(--sand-2);box-shadow:0 14px 40px rgba(20,54,66,.12);background:var(--sand-2)}
+  .map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+  .contact{background:linear-gradient(135deg,var(--sea-deep),var(--sea));color:var(--sand);text-align:center;border-radius:32px;padding:64px 28px;margin:0 auto;max-width:1052px}
+  .contact h2{color:var(--sand);font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:12px}
+  .contact p{max-width:560px;margin:0 auto 28px;opacity:.9}
+  footer{padding:50px 0 40px;text-align:center;color:var(--muted);font-size:.9rem}
+  footer strong{color:var(--sea-deep);font-family:"Fraunces",serif}
+  @media (max-width:900px){
+    .cards{grid-template-columns:repeat(2,1fr)}
+    .about-grid,.visit-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:640px){
+    nav ul{display:none}
+    .hero{padding:120px 0 140px}
+    .sun{width:90px;height:90px;top:90px;right:6%}
+    section{padding:64px 0}
+    .cards{grid-template-columns:1fr}
+    .contact{margin:0 14px;padding:48px 22px;max-width:none}
+  }
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Cape Island Café home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#f6efe4" opacity=".14"/><path d="M16 28h26v8a13 13 0 0 1-26 0z" fill="#f6efe4"/><path d="M42 30h3a5 5 0 0 1 0 10h-4" fill="none" stroke="#f6efe4" stroke-width="3"/><path d="M23 22c0-3 3-3 3-6M31 22c0-3 3-3 3-6" stroke="#e9a46a" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+      Cape Island Café
+    </a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#offer">What we offer</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="sun" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow">A Recovery Café · Falmouth, Cape Cod</span>
+      <h1>Come as you are. <em>Stay a while.</em></h1>
+      <p class="lead">Cape Island Café is a warm, welcoming community space on Gifford Street with good coffee, good food, and people who understand the road to recovery.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#visit">Plan your visit</a>
+        <a class="btn btn-ghost" href="#about">Our story</a>
+      </div>
+    </div>
+    <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 60 C 240 110 480 10 720 50 C 960 90 1200 20 1440 55 L1440 120 L0 120Z" fill="#2c6a7a" opacity=".5"/>
+      <path d="M0 80 C 260 40 520 120 780 80 C 1040 40 1240 100 1440 75 L1440 120 L0 120Z" fill="#f6efe4"/>
+    </svg>
+  </section>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <span class="section-title kicker" style="color:var(--coral);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem">About us</span>
+        <h2>A place to belong, one cup at a time</h2>
+        <p>Cape Island Café is a Recovery Café: a community space for anyone affected by addiction, mental health challenges, or simply the weight of everyday life. Here you can have a meal, catch up with friends, and find support, all without judgment.</p>
+        <p>We're connected to <strong>Cape Island Recovery</strong>, and we believe that recovery happens in community. Whether you're celebrating a milestone, taking a first step, or supporting someone you love, there's a seat for you here.</p>
+      </div>
+      <div class="quote">
+        <p>Everyone deserves a place where they're known, welcomed, and loved.</p>
+        <small>The heart of the Recovery Café</small>
+      </div>
+    </div>
+  </section>
+
+  <section id="offer" class="offer">
+    <div class="wrap">
+      <div class="section-title">
+        <span class="kicker">What we offer</span>
+        <h2>Coffee, community &amp; connection</h2>
+        <p>Simple things, done with care, in a space that feels like home.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 9h13v5a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6z"/><path d="M16 10h2a3 3 0 0 1 0 6h-2"/><path d="M7 3v2M11 3v2"/></svg></div>
+          <h3>Coffee &amp; food</h3>
+          <p>Fresh coffee and wholesome, comforting food in a relaxed, sober-friendly setting.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0 1 12 0M14 20a4 4 0 0 1 7 0"/></svg></div>
+          <h3>Community</h3>
+          <p>A friendly place to gather, connect with neighbors, and build lasting friendships.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+          <h3>Recovery support</h3>
+          <p>Encouragement and a connection to recovery resources through Cape Island Recovery.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>Open to all</h3>
+          <p>No matter where you are on your journey, you're welcome here, just as you are.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap">
+      <div class="section-title">
+        <span class="kicker">Visit us</span>
+        <h2>Find us in Falmouth</h2>
+        <p>Right here on Cape Cod. We'd love to see you.</p>
+      </div>
+      <div class="visit-grid">
+        <div class="info">
+          <h3>Cape Island Café</h3>
+          <div class="row">
+            <svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <div><div class="label">Address</div><div class="val">316 Gifford St<br>Falmouth, MA 02540</div>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=316+Gifford+St%2C+Falmouth%2C+MA" target="_blank" rel="noopener">Get directions →</a></div>
+          </div>
+          <div class="row">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <div><div class="label">Hours</div><div class="val">Our opening hours will be announced soon.</div><span class="pill">Hours coming soon</span></div>
+          </div>
+          <div class="row">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <div><div class="label">Email</div><div class="val"><a href="mailto:info@capeislandcafe.com">info@capeislandcafe.com</a></div></div>
+          </div>
+        </div>
+        <div class="map">
+          <iframe title="Map showing 316 Gifford St, Falmouth, MA" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=316+Gifford+St,+Falmouth,+MA+02540&amp;output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:20px">
+    <div class="contact">
+      <h2>We'd love to hear from you</h2>
+      <p>Questions, ideas, or want to get involved as a volunteer or partner? Drop us a line and we'll get back to you.</p>
+      <a class="btn btn-primary" href="mailto:info@capeislandcafe.com?subject=Hello%20Cape%20Island%20Caf%C3%A9">Email info@capeislandcafe.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Cape Island Café</strong> · 316 Gifford St, Falmouth, MA · A Recovery Café connected to Cape Island Recovery</p>
+    <p>&copy; <span id="y">2026</span> Cape Island Café. All are welcome.</p>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
