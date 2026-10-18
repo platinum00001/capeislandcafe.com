@@ -157,7 +157,7 @@
       { id: 'charity', w: { charity: 3, fundraiser: 3, fundraising: 3, donate: 2.5, donation: 2.5, nonprofit: 2.5, volunteer: 2 }, f: function () {
         return { html: '<b>Charity events</b> are coming soon. To get involved, email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a>.', speak: 'Charity events are coming soon. Email us to get involved.', actions: [a('Charity Events', P.charity, true), MAIL] }; } },
       { id: 'reserve', w: { reservation: 3, reserve: 3, book: 1.5, booking: 2, table: 1.5 }, f: function () {
-        return { html: 'We don’t take reservations for lunch: it’s to go or stay. For the Sunday brunch, ' + esc(E.tickets).toLowerCase() + '.', speak: 'We don’t take reservations for lunch. For the Sunday brunch, tickets will be available soon.', actions: [ORDER, a('View the brunch menu', E.page)] }; } },
+        return { html: 'Lunch is to go or stay. To ask about reservations or larger groups, call <a href="tel:+17742475263">774-2-ISLAND</a>. Jones’n Sunday Brunch: ' + esc(E.tickets) + '.', speak: 'Lunch is to go or stay. To ask about reservations, call 774-2-ISLAND. For the Sunday brunch, tickets will be available soon.', actions: [CALL, a('View the brunch menu', E.page)] }; } },
       { id: 'pricerange', w: { expensive: 2, cheap: 2, affordable: 2 }, p: { 'how much': 1, 'price range': 3, 'prices': 1 }, f: function () {
         return { html: 'Lunch soups are $8.00, salads $11.00–$15.00, bowls $12.50–$16.50, wraps $14.00–$14.50, and the Build Your Own Lunch Plate is $14.50. Drinks are $3.50, Nitro Mocktails $5.50–$5.75.', speak: 'Soups are 8 dollars, salads 11 to 15, bowls 12 50 to 16 50, wraps around 14, and the build your own plate is 14 50.', actions: [a('See the full menu', P.menu, true)] }; } }
     ];
