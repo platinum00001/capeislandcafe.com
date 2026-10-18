@@ -364,3 +364,17 @@ body.nav-open .chat-bubble{display:none}
   .icon-btn .lbl{display:none}
   .chips{padding:10px 12px}
 }
+
+/* v10: Affiliates */
+.hero .tix{margin:6px 0 14px}
+.aff-list{background:var(--paper)}
+.aff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,340px));gap:24px;justify-content:center}
+.aff-card{display:flex;flex-direction:column;background:var(--cream);border:1px solid var(--line);border-radius:22px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 14px 34px rgba(11,26,59,.08);transition:transform .2s,box-shadow .2s}
+.aff-card:hover,.aff-card:focus-visible{transform:translateY(-4px);box-shadow:0 22px 46px rgba(11,26,59,.16)}
+.aff-logo{display:flex;align-items:center;justify-content:center;height:150px;background:#fff;border-bottom:1px solid var(--line);padding:20px}
+.aff-logo img{max-height:110px;max-width:100%;width:auto;height:auto;object-fit:contain}
+.aff-body{padding:20px 22px 24px}
+.aff-body h3{font-size:1.35rem;color:var(--navy)}
+.aff-blurb{color:var(--muted);margin-top:6px}
+.aff-disc{margin-top:10px;font-weight:700;color:var(--gold)}
+.aff-cta{display:inline-block;margin-top:14px;font-family:var(--cond);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--gold)}

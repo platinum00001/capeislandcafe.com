@@ -156,6 +156,9 @@
           speak: 'Meal prep is coming soon. For catering or group orders, please email or call us.', actions: [a('Meal Prep', P.mealprep, true), MAIL, CALL] }; } },
       { id: 'charity', w: { charity: 3, fundraiser: 3, fundraising: 3, donate: 2.5, donation: 2.5, nonprofit: 2.5, volunteer: 2 }, f: function () {
         return { html: '<b>Charity events</b> are coming soon. To get involved, email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a>.', speak: 'Charity events are coming soon. Email us to get involved.', actions: [a('Charity Events', P.charity, true), MAIL] }; } },
+      { id: 'affiliates', w: { affiliate: 3, affiliates: 3, partner: 3, partners: 3, partnership: 3, sponsor: 3, sponsors: 3, discount: 3, discounts: 3, coupon: 2.5, deal: 2, deals: 2, promo: 2, savings: 2, save: 1.5 }, f: function () {
+        return { html: '<b>Affiliates are coming soon.</b> Buy at Cape Island Café and save at our affiliated and sponsor businesses. Partner discounts are coming soon. Interested in partnering? Email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a>.',
+          speak: 'Affiliates are coming soon. Buy at Cape Island Café and save at our affiliated and sponsor businesses. Partner discounts are coming soon.', actions: [a('Affiliates', P.affiliates || 'affiliates.html', true), MAIL] }; } },
       { id: 'reserve', w: { reservation: 3, reserve: 3, book: 1.5, booking: 2, table: 1.5 }, f: function () {
         return { html: 'Lunch is to go or stay. To ask about reservations or larger groups, call <a href="tel:+17742475263">774-2-ISLAND</a>. Jones’n Sunday Brunch: ' + esc(E.tickets) + '.', speak: 'Lunch is to go or stay. To ask about reservations, call 774-2-ISLAND. For the Sunday brunch, tickets will be available soon.', actions: [CALL, a('View the brunch menu', E.page)] }; } },
       { id: 'pricerange', w: { expensive: 2, cheap: 2, affordable: 2 }, p: { 'how much': 1, 'price range': 3, 'prices': 1 }, f: function () {
