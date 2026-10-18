@@ -1,0 +1,522 @@
+{
+ "business": {
+  "name": "Cape Island Café",
+  "address": "316 Gifford St, Falmouth, MA 02540",
+  "phone": "774-2-ISLAND",
+  "tel": "tel:+17742475263",
+  "email": "info@capeislandcafe.com",
+  "order": "https://capeislandcafe.square.site/#LGTFBJKYQZEZEGEN6N2H5QOO",
+  "directions": "https://www.google.com/maps/search/?api=1&query=316+Gifford+St%2C+Falmouth%2C+MA+02540",
+  "hours": "Lunch: Monday–Friday, 11:00 AM – 3:00 PM",
+  "soft": "Soft opening: hours may be extended.",
+  "togo": "Please pack your lunch to go or stay and enjoy!"
+ },
+ "event": {
+  "name": "Jones’n Sunday Brunch",
+  "date": "Sunday, October 25, 2026",
+  "page": "jonesn-sunday-brunch-oct-25.html",
+  "tickets": "Tickets available soon",
+  "note": "Menu and prices are tentative and may change."
+ },
+ "pages": {
+  "menu": "index.html#menu",
+  "events": "special-events.html",
+  "brunch": "sunday-brunch.html",
+  "mealprep": "meal-prep.html",
+  "cheesecakes": "custom-cheesecakes.html",
+  "charity": "charity-events.html",
+  "recovery": "recovery-cafe.html"
+ },
+ "items": [
+  {
+   "name": "Cape Road Chili",
+   "price": "$8.00",
+   "section": "Soups",
+   "menu": "lunch",
+   "desc": "in a bowl",
+   "order": "",
+   "img": "img/menu/cape-road-chili.webp"
+  },
+  {
+   "name": "Kale & Bean Soup",
+   "price": "$8.00",
+   "section": "Soups",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/kale-bean-soup.webp"
+  },
+  {
+   "name": "Roasted Tomato & Red Pepper",
+   "price": "$8.00",
+   "section": "Soups",
+   "menu": "lunch",
+   "desc": "",
+   "order": "https://capeislandcafe.square.site/product/roasted-tomato-and-red-pepper/F2EKXSKULS6Z5NZ4KGHNSQVE",
+   "img": "img/menu/roasted-tomato-red-pepper.webp"
+  },
+  {
+   "name": "Harbor Chop",
+   "price": "$15.00",
+   "section": "Salads",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/harbor-chop.webp"
+  },
+  {
+   "name": "Caesar Salad",
+   "price": "$11.00",
+   "section": "Salads",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/caesar-salad.webp"
+  },
+  {
+   "name": "Cashew Chicken Salad Plate",
+   "price": "$14.00",
+   "section": "Salads",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/cashew-chicken-salad-plate.webp"
+  },
+  {
+   "name": "Kale Crunch",
+   "price": "$14.50",
+   "section": "Salads",
+   "menu": "lunch",
+   "desc": "",
+   "order": "https://capeislandcafe.square.site/product/kale-crunch/VCGZ4E73UPJJ62N4JJR3UPEZ",
+   "img": "img/menu/kale-crunch.webp"
+  },
+  {
+   "name": "Island Chef",
+   "price": "$14.50",
+   "section": "Salads",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/island-chef.webp"
+  },
+  {
+   "name": "Salmon Bowl",
+   "price": "$16.50",
+   "section": "Bowls",
+   "menu": "lunch",
+   "desc": "with avocado and greens",
+   "order": "https://capeislandcafe.square.site/product/salmon-bowl/YHZ77NC6CI2FJ2SB5PWKBLJ4",
+   "img": "img/menu/salmon-bowl.webp"
+  },
+  {
+   "name": "Southwest Rice Bowl",
+   "price": "$14.00",
+   "section": "Bowls",
+   "menu": "lunch",
+   "desc": "",
+   "order": "https://capeislandcafe.square.site/product/southwest-rice-bowl/XJBL3AQRLQSMVEQKWIMJE2QK",
+   "img": "img/menu/southwest-rice-bowl.webp"
+  },
+  {
+   "name": "Chili Bowl",
+   "price": "$12.50",
+   "section": "Bowls",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/chili-bowl.webp"
+  },
+  {
+   "name": "Chicken Bacon Black Bean Wrap",
+   "price": "$14.50",
+   "section": "Wraps",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/chicken-bacon-black-bean-wrap.webp"
+  },
+  {
+   "name": "Cashew Chicken Wrap",
+   "price": "$14.00",
+   "section": "Wraps",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/cashew-chicken-wrap.webp"
+  },
+  {
+   "name": "Chicken Caesar Wrap",
+   "price": "$14.00",
+   "section": "Wraps",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/chicken-caesar-wrap.webp"
+  },
+  {
+   "name": "Ham & Cheese Wrap",
+   "price": "$14.00",
+   "section": "Wraps",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/ham-cheese-wrap.webp"
+  },
+  {
+   "name": "Chili Wrap",
+   "price": "$14.00",
+   "section": "Wraps",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/chili-wrap.webp"
+  },
+  {
+   "name": "Avocado",
+   "price": "$2.50",
+   "section": "Add-Ons",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Chicken or ham",
+   "price": "$5.00",
+   "section": "Add-Ons",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Cashew chicken salad scoop",
+   "price": "$5.50",
+   "section": "Add-Ons",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Black olives",
+   "price": "$1.00",
+   "section": "Add-Ons",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Bacon",
+   "price": "$2.50",
+   "section": "Add-Ons",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Salmon",
+   "price": "$7.00",
+   "section": "Add-Ons",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Boiled egg",
+   "price": "$2.00",
+   "section": "Add-Ons",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Extra cheese",
+   "price": "$1.50",
+   "section": "Add-Ons",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Pepperoncini",
+   "price": "$1.00",
+   "section": "Add-Ons",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Pepsi",
+   "price": "$3.50",
+   "section": "Beverages",
+   "menu": "lunch",
+   "desc": "",
+   "order": "https://capeislandcafe.square.site/product/pepsi/SS6NF3MGX5S3GPKGL6CAUA55",
+   "img": "img/menu/pepsi.webp"
+  },
+  {
+   "name": "Mountain Dew",
+   "price": "$3.50",
+   "section": "Beverages",
+   "menu": "lunch",
+   "desc": "",
+   "order": "https://capeislandcafe.square.site/product/mountain-dew/6ZF73M6XPQJT3FPEMQQE2GQL",
+   "img": "img/menu/mountain-dew.webp"
+  },
+  {
+   "name": "Diet Pepsi",
+   "price": "$3.50",
+   "section": "Beverages",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/diet-pepsi.webp"
+  },
+  {
+   "name": "Coffee (Regular)",
+   "price": "$3.50",
+   "section": "Beverages",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/coffee-regular.webp"
+  },
+  {
+   "name": "Decaf Coffee",
+   "price": "$3.50",
+   "section": "Beverages",
+   "menu": "lunch",
+   "desc": "",
+   "order": "",
+   "img": "img/menu/decaf-coffee.webp"
+  },
+  {
+   "name": "Moscow Mule",
+   "price": "$5.50",
+   "section": "Nitro Mocktails",
+   "menu": "lunch",
+   "desc": "Nitro Mocktails are non-alcoholic, nitro-activated, vegan & gluten-free. Serve cold or over ice.",
+   "order": "https://capeislandcafe.square.site/product/mockscowl-mule/U74Q63VH2MX2R5NHCDHL3BB3",
+   "img": "img/menu/moscow-mule.webp"
+  },
+  {
+   "name": "Sangria",
+   "price": "$5.50",
+   "section": "Nitro Mocktails",
+   "menu": "lunch",
+   "desc": "Nitro Mocktails are non-alcoholic, nitro-activated, vegan & gluten-free. Serve cold or over ice.",
+   "order": "https://capeislandcafe.square.site/product/sangria/2W3QOCMKB6XHUQ52GBLPG2VZ",
+   "img": "img/menu/sangria.webp"
+  },
+  {
+   "name": "Mockarita",
+   "price": "$5.50",
+   "section": "Nitro Mocktails",
+   "menu": "lunch",
+   "desc": "Nitro Mocktails are non-alcoholic, nitro-activated, vegan & gluten-free. Serve cold or over ice.",
+   "order": "https://capeislandcafe.square.site/product/mockarita/QOLQZ4VVFSPAEPGMUGP5ACHO",
+   "img": "img/menu/mockarita.webp"
+  },
+  {
+   "name": "Mockapolitan",
+   "price": "$5.50",
+   "section": "Nitro Mocktails",
+   "menu": "lunch",
+   "desc": "Nitro Mocktails are non-alcoholic, nitro-activated, vegan & gluten-free. Serve cold or over ice.",
+   "order": "https://capeislandcafe.square.site/product/mockapolitan/2CZWYKDQDZOH4SNHUT457FQW",
+   "img": "img/menu/mockapolitan.webp"
+  },
+  {
+   "name": "Espresso Martini",
+   "price": "$5.75",
+   "section": "Nitro Mocktails",
+   "menu": "lunch",
+   "desc": "Nitro Mocktails are non-alcoholic, nitro-activated, vegan & gluten-free. Serve cold or over ice.",
+   "order": "https://capeislandcafe.square.site/product/espresso-martini/JAIDH2BA65IQ33YIT6RXMV4I",
+   "img": "img/menu/espresso-martini.webp"
+  },
+  {
+   "name": "Build Your Own Lunch Plate",
+   "price": "$14.50",
+   "section": "Build Your Own",
+   "menu": "lunch",
+   "desc": "Choose a base, a protein, up to 4 vegetables, a sauce or dressing, and a side.",
+   "order": "https://capeislandcafe.square.site/product/build-your-own/24G7J74ZRMXHCKBN55KI6TAH",
+   "img": "img/menu/build-your-own-lunch-plate.webp",
+   "steps": [
+    {
+     "title": "Choose Your Base",
+     "options": "Bowl (over chicken-broth rice), Wrap (spinach, wheat, or white), Salad (over mixed greens)"
+    },
+    {
+     "title": "Choose Your Protein",
+     "options": "Grilled Chicken, Ham, Salmon, Cashew Chicken Salad, Cape Road Chili"
+    },
+    {
+     "title": "Choose Your Vegetables (up to 4)",
+     "options": "Romaine, Spinach, Kale, Cucumber, Tomato, Avocado, Red Onion, Black Beans, Corn, Cheddar, Pepperoncini, Olives, Cranberries, Cabbage"
+    },
+    {
+     "title": "Choose Your Sauce or Dressing",
+     "options": "Mayo, Honey Mustard, Italian, Caesar, Barbecue, Ranch. Note: Dressings tossed in salad unless requested on the side."
+    },
+    {
+     "title": "Choose Your Side",
+     "options": "Chips, Tortilla Chips, Potato Salad, Egg Salad"
+    }
+   ]
+  },
+  {
+   "name": "Sunday Sunrise",
+   "price": "$7",
+   "section": "Brunch Drinks",
+   "menu": "brunch",
+   "desc": "Orange and pineapple layered over grenadine, finished with sparkling water.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Virgin Bloody Mary",
+   "price": "$8",
+   "section": "Brunch Drinks",
+   "menu": "brunch",
+   "desc": "Our house mix with an Old Bay rim, crisp celery and a pickled bean.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Sparkling Cranberry Mule",
+   "price": "$7",
+   "section": "Brunch Drinks",
+   "menu": "brunch",
+   "desc": "Cape cranberry and fresh lime, lifted with ginger beer.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Coconut Cold Brew",
+   "price": "$6",
+   "section": "Brunch Drinks",
+   "menu": "brunch",
+   "desc": "Smooth cold brew swirled with coconut cream and a touch of maple.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Fresh-Squeezed OJ or Lemonade",
+   "price": "$5",
+   "section": "Brunch Drinks",
+   "menu": "brunch",
+   "desc": "Bright and freshly squeezed.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Drip Coffee or Hot Tea",
+   "price": "$3",
+   "section": "Brunch Drinks",
+   "menu": "brunch",
+   "desc": "Freshly brewed, with free refills.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Coconut Cream French Toast",
+   "price": "$15.00",
+   "section": "Sweet Starts",
+   "menu": "brunch",
+   "desc": "Golden brioche with brûléed bananas and toasted coconut, finished with maple-rum syrup.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Shrimp & Grits",
+   "price": "$19.00",
+   "section": "Southern Classics",
+   "menu": "brunch",
+   "desc": "Seared shrimp over creamy cheddar stone-ground grits in a savory andouille pan sauce.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Chicken & Waffles",
+   "price": "$18.00",
+   "section": "Southern Classics",
+   "menu": "brunch",
+   "desc": "Crispy buttermilk fried chicken on a Belgian waffle with hot honey and maple butter.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Soft Scrambled Eggs & Maple Sausage",
+   "price": "$13.00",
+   "section": "Farmhouse Plate",
+   "menu": "brunch",
+   "desc": "Soft scrambled eggs with chives and crème fraîche, house sausage and toasted sourdough.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Stuffed Quahogs (2)",
+   "price": "$14.00",
+   "section": "Cape Cod Favorites",
+   "menu": "brunch",
+   "desc": "Local clams baked with linguiça, bay scallops and shrimp in a buttery herb stuffing, served with lemon.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Butter-Poached Lobster Tail",
+   "price": "$32.00",
+   "section": "Cape Cod Favorites",
+   "menu": "brunch",
+   "desc": "Two butter-poached cold-water tails with drawn butter and lemon, alongside soft scrambled eggs and toasted brioche.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Maple Sausage Links",
+   "price": "$5.00",
+   "section": "Brunch Sides",
+   "menu": "brunch",
+   "desc": "",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Cheddar Grits",
+   "price": "$4.00",
+   "section": "Brunch Sides",
+   "menu": "brunch",
+   "desc": "",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Caramelized Bananas",
+   "price": "$4.00",
+   "section": "Brunch Sides",
+   "menu": "brunch",
+   "desc": "",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Seasonal Fruit",
+   "price": "$5.00",
+   "section": "Brunch Sides",
+   "menu": "brunch",
+   "desc": "",
+   "order": "",
+   "img": ""
+  }
+ ]
+}
