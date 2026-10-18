@@ -253,3 +253,35 @@ section{padding:84px 0}
 .item-order{flex:0 0 auto;margin-left:6px;font-family:var(--cond);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--charcoal);background:var(--sun);border-radius:999px;padding:3px 10px;line-height:1.4;align-self:center;margin-right:4px;transition:background .15s}
 .item-order:hover,.item-order:focus-visible{background:var(--sun-2)}
 @media (max-width:620px){.item-order{font-size:.72rem;padding:3px 8px;margin-left:4px}}
+
+/* v6: featured event (Jones'n Sunday Brunch) */
+.event{background:var(--paper)}
+.event-head{text-align:center;max-width:760px;margin:0 auto 38px}
+.event-head h2{font-size:clamp(2.2rem,5vw,3.4rem);margin:8px 0 6px}
+.event-date{font-family:var(--serif);font-size:clamp(1.2rem,2.4vw,1.5rem);color:var(--gold)}
+.event-sub{color:var(--muted);margin-top:4px}
+.event-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.tix{display:inline-flex;align-items:center;gap:8px;background:var(--sun);color:var(--charcoal);font-family:var(--cond);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:1.05rem;padding:10px 20px;border-radius:999px;box-shadow:0 10px 24px rgba(253,203,46,.35)}
+.tent{display:inline-block;border:2px solid var(--gold);color:var(--gold);font-family:var(--cond);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.9rem;padding:7px 16px;border-radius:999px;background:#fffcf3}
+.bphotos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:44px}
+.bphoto{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:0}
+.bphoto img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.bphoto figcaption{padding:14px 16px 18px}
+.bphoto b{display:block;font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.95rem;color:var(--navy)}
+.bphoto span{color:var(--muted);font-size:.92rem}
+.brunch-menu{background:var(--cream);border:1px solid var(--line);border-radius:28px;padding:44px 48px}
+.bm-head{text-align:center;margin-bottom:30px}
+.bm-head h3{font-size:clamp(2rem,4vw,2.8rem);margin:12px 0 4px}
+.bm-head p{color:var(--muted)}
+.blist{list-style:none}
+.blist li{display:block;padding:9px 0}
+.blist .bl{display:flex;align-items:baseline;gap:8px;font-size:1.08rem;font-weight:600;color:var(--navy)}
+.blist .bl .dots{flex:1 1 auto;border-bottom:2px dotted #b9b2a2;transform:translateY(-4px);min-width:20px}
+.blist .bl .pr{font-weight:700;font-variant-numeric:tabular-nums}
+.blist .bd{color:var(--muted);font-size:.96rem;line-height:1.45;margin-top:2px;max-width:46ch}
+.bm-note{margin-top:28px;text-align:center;color:var(--muted);font-size:.92rem}
+.bm-thanks{margin-top:22px;text-align:center;font-family:var(--serif);color:var(--navy);font-size:1.15rem}
+.bm-thanks em{color:var(--gold)}
+.event-link a{color:var(--sun);font-weight:700;text-decoration:none;border-bottom:2px solid var(--sun)}
+@media (max-width:980px){.bphotos{grid-template-columns:1fr 1fr}.brunch-menu{padding:32px 24px}}
+@media (max-width:620px){.bphotos{grid-template-columns:1fr 1fr;gap:12px}.bphoto figcaption{padding:10px 12px 12px}.bphoto b{font-size:.82rem}.bphoto span{font-size:.82rem}.brunch-menu{padding:26px 18px}.tix{font-size:.95rem}}
