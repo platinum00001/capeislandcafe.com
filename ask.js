@@ -73,7 +73,7 @@
       if (it.menu === 'brunch') {
         h = '<b>' + esc(it.name) + '</b> is ' + esc(it.price) + ' on the tentative menu for <b>' + esc(E.name) + '</b> (' + esc(E.date) + ').' +
           (it.desc ? '<br>' + esc(it.desc) : '') + '<br><small>' + esc(E.note) + ' ' + esc(E.tickets) + '. Brunch items can’t be ordered online.</small>';
-        s = it.name + ' is ' + it.price.replace('$', '') + ' dollars on the tentative menu for ' + E.name.replace('’', "'") + ', on ' + E.date + '. ' + (it.desc || '');
+        s = it.name + ' is ' + it.price.replace('$', '') + ' dollars on the tentative menu for ' + E.name.replace('’', "'") + ', ' + E.date + '. ' + (it.desc || '');
         acts.push(a('View the brunch menu', E.page, true));
       } else {
         h = '<b>' + esc(it.name) + '</b> is ' + esc(it.price) + (it.section === 'Add-Ons' ? ' as an add-on' : '') + ' on our lunch menu (' + esc(it.section) + ').' +
@@ -103,7 +103,7 @@
         return { html: 'You’re welcome! Anything else I can help with?', speak: 'You’re welcome! Anything else I can help with?', actions: [ORDER] }; } },
       { id: 'hours', w: { hour: 2, open: 2, opening: 2, close: 2, closing: 2, closed: 1.5, when: 0.8, time: 1, today: 1, tomorrow: 1, weekend: 1, monday: 1, tuesday: 1, wednesday: 1, thursday: 1, friday: 1, saturday: 1, sunday: 0.6 },
         p: { 'what time': 2, 'are you open': 2 }, f: function (q) {
-        var x = /sunday|weekend|saturday/.test(q) ? '<br>Our first Sunday event is <b>' + esc(E.name) + '</b> on ' + esc(E.date) + '.' : '';
+        var x = /sunday|weekend|saturday/.test(q) ? '<br>Our first Sunday event is <b>' + esc(E.name) + '</b>, ' + esc(E.date) + '.' : '';
         return { html: '<b>' + esc(B.hours) + '</b><br>' + esc(B.soft) + x, speak: 'Lunch is served Monday through Friday, 11 AM to 3 PM. ' + B.soft, actions: [ORDER, CALL] }; } },
       { id: 'order', w: { order: 2, ordering: 2, online: 1.5, pickup: 1.5, takeout: 2, togo: 1.5, square: 1, buy: 1.5, purchase: 1.5, delivery: 2, deliver: 2, ahead: 1 },
         p: { 'to go': 2, 'call ahead': 2, 'pick up': 2 }, f: function (q) {
@@ -118,21 +118,21 @@
         var secs = ['Soups', 'Salads', 'Bowls', 'Wraps'];
         var h = 'Our lunch menu has:<ul class="ans-list sec">' + secs.map(function (s) {
           var arr = bySection(s); return '<li><span><b>' + s + '</b>: ' + arr.map(function (i) { return esc(i.name); }).join(', ') + '</span></li>'; }).join('') +
-          '</ul>Plus the <b>Build Your Own Lunch Plate</b> ($14.50), add-ons, beverages and Nitro Mocktails.';
-        return { html: h, speak: 'Our lunch menu has soups, salads, bowls and wraps, plus a build your own lunch plate for 14 50, add-ons, beverages and nitro mocktails.', actions: [a('See the full menu', P.menu, true), ORDER] }; } },
+          '</ul>Plus the <b>Build Your Own Lunch Plate</b> ($14.50), add-ons and beverages.';
+        return { html: h, speak: 'Our lunch menu has soups, salads, bowls and wraps, plus a build your own lunch plate for 14 50, add-ons and beverages.', actions: [a('See the full menu', P.menu, true), ORDER] }; } },
       { id: 'veg', w: { vegetarian: 3, vegan: 3, veggie: 2, plant: 1.5, meatless: 3, gluten: 2.5, dairy: 2, allergy: 2.5, allergie: 2.5, allergen: 2.5, celiac: 2.5, nut: 1.5, diet: 0.5 }, f: function () {
         return { html: 'Our menu doesn’t label vegetarian or allergen-free items, so please call <a href="' + B.tel + '">' + esc(B.phone) + '</a> to confirm. A few things from the menu that may help:' +
           '<ul class="ans-list sec"><li><span>The <b>Build Your Own Lunch Plate</b> ($14.50) lets you pick a base (salad over mixed greens, or a spinach, wheat or white wrap), up to 4 vegetables (romaine, spinach, kale, cucumber, tomato, avocado, red onion, black beans, corn, cheddar, pepperoncini, olives, cranberries, cabbage), a dressing and a side.</span></li>' +
-          '<li><span>Bowls are served over <b>chicken-broth rice</b>.</span></li><li><span><b>Nitro Mocktails</b> are non-alcoholic, nitro-activated, vegan &amp; gluten-free.</span></li></ul>',
-          speak: 'Our menu doesn’t label vegetarian or allergen-free items, so please call to confirm. The build your own plate lets you choose a salad or wrap base with up to four vegetables. Bowls are served over chicken broth rice, and our nitro mocktails are vegan and gluten free.',
+          '<li><span>Bowls are served over <b>chicken-broth rice</b>.</span></li></ul>',
+          speak: 'Our menu doesn’t label vegetarian or allergen-free items, so please call to confirm. The build your own plate lets you choose a salad or wrap base with up to four vegetables. Bowls are served over chicken broth rice.',
           actions: [CALL, a('See the menu', P.menu)] }; } },
       { id: 'byo', w: { byo: 3, custom: 1, choose: 1 }, p: { 'build your own': 3, 'own plate': 3, 'lunch plate': 2 }, f: function () {
         var it = kb.items.filter(function (i) { return i.name === 'Build Your Own Lunch Plate'; })[0]; return itemAnswer(it); } },
       { id: 'drinks', w: { drink: 2, beverage: 2, soda: 2, mocktail: 2.5, nitro: 2.5, alcohol: 2, alcoholic: 2, beer: 2, wine: 2, cocktail: 2 }, f: function (q) {
-        var b = bySection('Beverages'), n = bySection('Nitro Mocktails');
+        var b = bySection('Beverages');
         var al = /alcohol|beer|wine|cocktail/.test(q) ? 'Our drink menu is non-alcoholic. ' : '';
-        return { html: al + '<b>Beverages</b>' + list(b) + '<b>Nitro Mocktails</b>' + list(n) + '<small>' + esc(n[0] ? n[0].desc : '') + '</small>',
-          speak: al + 'Beverages: ' + speakList(b) + '. Nitro mocktails: ' + speakList(n) + '. They are non-alcoholic, vegan and gluten free.', actions: [ORDER] }; } },
+        return { html: al + '<b>Beverages</b>' + list(b),
+          speak: al + 'Beverages: ' + speakList(b) + '.', actions: [ORDER] }; } },
       { id: 'soups', w: { soup: 2.5 }, f: function () { var x = bySection('Soups'); return { html: '<b>Soups</b>' + list(x), speak: 'Our soups: ' + speakList(x) + '.', actions: [ORDER] }; } },
       { id: 'salads', w: { salad: 2.5 }, f: function () { var x = bySection('Salads'); return { html: '<b>Salads</b>' + list(x), speak: 'Our salads: ' + speakList(x) + '.', actions: [ORDER] }; } },
       { id: 'bowls', w: { bowl: 2.5 }, f: function () { var x = bySection('Bowls'); return { html: '<b>Bowls</b>' + list(x) + '<small>Bowls are served over chicken-broth rice.</small>', speak: 'Our bowls: ' + speakList(x) + '.', actions: [ORDER] }; } },
@@ -140,15 +140,15 @@
       { id: 'addons', w: { addon: 2.5, add: 1.5, extra: 2, topping: 2 }, p: { 'add on': 2.5 }, f: function () { var x = bySection('Add-Ons'); return { html: '<b>Add-Ons</b>' + list(x), speak: 'Add-ons: ' + speakList(x) + '.', actions: [ORDER] }; } },
       { id: 'brunch', w: { brunch: 3, jone: 3, jones: 3, jonesn: 3, ticket: 2.5, event: 1.5, october: 2, oct: 2, '25': 1.5, '25th': 1.5, sunday: 1.2 }, f: function () {
         var cnt = kb.items.filter(function (i) { return i.menu === 'brunch'; }).length;
-        return { html: '<b>' + esc(E.name) + '</b> is on <b>' + esc(E.date) + '</b> at Cape Island Café. <b>' + esc(E.tickets) + '.</b><br>The tentative menu has ' + cnt + ' items, including Coconut Cream French Toast, Shrimp &amp; Grits, Chicken &amp; Waffles, Stuffed Quahogs and a Butter-Poached Lobster Tail. <small>' + esc(E.note) + '</small>',
-          speak: E.name.replace('’', "'") + ' is on ' + E.date + '. Tickets will be available soon. The tentative menu includes coconut cream French toast, shrimp and grits, chicken and waffles, stuffed quahogs, and a butter poached lobster tail.',
+        return { html: '<b>' + esc(E.name) + '</b> is <b>' + esc(E.date) + '</b> at Cape Island Café. <b>' + esc(E.tickets) + '.</b><br>The tentative menu has ' + cnt + ' items, including Coconut Cream French Toast, Shrimp &amp; Grits, Chicken &amp; Waffles, Stuffed Quahogs and a Butter-Poached Lobster Tail. <small>' + esc(E.note) + '</small>',
+          speak: E.name.replace('’', "'") + ' is ' + E.date + '. Date, time and tickets will be announced. The tentative menu includes coconut cream French toast, shrimp and grits, chicken and waffles, stuffed quahogs, and a butter poached lobster tail.',
           actions: [a('View the brunch menu', E.page, true), a('Special Events', P.events)] }; } },
       { id: 'events', w: { special: 1.5, party: 2, private: 2, host: 2, celebration: 2 }, p: { 'special event': 3 }, f: function () {
-        return { html: 'Our first featured event is <b>' + esc(E.name) + '</b> on ' + esc(E.date) + ' (' + esc(E.tickets).toLowerCase() + '). More special events are coming soon. To ask about an event, email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a>.',
-          speak: 'Our first featured event is the Sunday brunch on ' + E.date + '. More special events are coming soon.', actions: [a('Special Events', P.events, true), MAIL] }; } },
+        return { html: 'Our first featured event is <b>' + esc(E.name) + '</b>, ' + esc(E.date) + '. More special events are coming soon. To ask about an event, email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a>.',
+          speak: 'Our first featured event is the Sunday brunch, ' + E.date + '. More special events are coming soon.', actions: [a('Special Events', P.events, true), MAIL] }; } },
       { id: 'recovery', w: { recovery: 3, sober: 2.5, sobriety: 2.5, addiction: 2.5, support: 1.5, community: 1.5, meeting: 1 }, p: { 'recovery cafe': 3 }, f: function () {
-        return { html: 'Cape Island Café is a <b>Recovery Café</b>: a welcoming community space with coffee, food and recovery support, connected to Cape Island Recovery. Everyone is welcome, just as you are.',
-          speak: 'Cape Island Café is a Recovery Café: a welcoming community space with coffee, food, and recovery support, connected to Cape Island Recovery. Everyone is welcome.', actions: [a('About the Recovery Café', P.recovery, true)] }; } },
+        return { html: 'Cape Island Café is a <b>Recovery Café</b>: a welcoming community space and home of <b>Root to Rise</b>, a program of Inspiration Is Everywhere, a 501(c)(3) nonprofit. People in recovery can get a free or low-cost meal and talk with a recovery coach. To volunteer or support, email <a href="mailto:roottorisema@gmail.com">roottorisema@gmail.com</a>. Everyone is welcome, just as you are.',
+          speak: 'Cape Island Café is a Recovery Café: a welcoming community space and home of Root to Rise, a program of Inspiration Is Everywhere. People in recovery can get a free or low-cost meal and talk with a recovery coach. Everyone is welcome.', actions: [a('About the Recovery Café', P.recovery, true)] }; } },
       { id: 'cheesecake', w: { cheesecake: 3, cake: 2, dessert: 2, sweet: 0.8 }, f: function () {
         return { html: '<b>Custom cheesecakes</b> are coming soon. For updates, email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a>.', speak: 'Custom cheesecakes are coming soon. Email us for updates.', actions: [a('Custom Cheesecakes', P.cheesecakes, true), MAIL] }; } },
       { id: 'mealprep', w: { meal: 1, prep: 2.5, mealprep: 3, catering: 3, cater: 3, caterer: 3, weekly: 1.5, office: 1, group: 1 }, p: { 'meal prep': 3 }, f: function () {
@@ -160,9 +160,9 @@
         return { html: '<b>Affiliates are coming soon.</b> Buy at Cape Island Café and save at our affiliated and sponsor businesses. Partner discounts are coming soon. Interested in partnering? Email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a>.',
           speak: 'Affiliates are coming soon. Buy at Cape Island Café and save at our affiliated and sponsor businesses. Partner discounts are coming soon.', actions: [a('Affiliates', P.affiliates || 'affiliates.html', true), MAIL] }; } },
       { id: 'reserve', w: { reservation: 3, reserve: 3, book: 1.5, booking: 2, table: 1.5 }, f: function () {
-        return { html: 'Lunch is to go or stay. To ask about reservations or larger groups, call <a href="tel:+17742475263">774-2-ISLAND</a>. Jones’n Sunday Brunch: ' + esc(E.tickets) + '.', speak: 'Lunch is to go or stay. To ask about reservations, call 774-2-ISLAND. For the Sunday brunch, tickets will be available soon.', actions: [CALL, a('View the brunch menu', E.page)] }; } },
+        return { html: 'Lunch is to go or stay. To ask about reservations or larger groups, call <a href="tel:+17742475263">774-2-ISLAND</a>. Jones’n Sunday Brunch: ' + esc(E.tickets) + '.', speak: 'Lunch is to go or stay. To ask about reservations, call 774-2-ISLAND. For the Sunday brunch, details will be announced.', actions: [CALL, a('View the brunch menu', E.page)] }; } },
       { id: 'pricerange', w: { expensive: 2, cheap: 2, affordable: 2 }, p: { 'how much': 1, 'price range': 3, 'prices': 1 }, f: function () {
-        return { html: 'Lunch soups are $8.00, salads $11.00–$15.00, bowls $12.50–$16.50, wraps $14.00–$14.50, and the Build Your Own Lunch Plate is $14.50. Drinks are $3.50, Nitro Mocktails $5.50–$5.75.', speak: 'Soups are 8 dollars, salads 11 to 15, bowls 12 50 to 16 50, wraps around 14, and the build your own plate is 14 50.', actions: [a('See the full menu', P.menu, true)] }; } }
+        return { html: 'Lunch soups are $8.00, salads $11.00–$15.00, bowls $12.50–$16.50, wraps $14.00–$14.50, and the Build Your Own Lunch Plate is $14.50. Drinks are $3.50.', speak: 'Soups are 8 dollars, salads 11 to 15, bowls 12 50 to 16 50, wraps around 14, and the build your own plate is 14 50.', actions: [a('See the full menu', P.menu, true)] }; } }
     ];
 
     function scoreIntent(intent, toks, qn) {
@@ -303,7 +303,7 @@
     });
   }
 
-  bubble('bot', 'Hi! I’m the Cape Island Café helper. Ask me about our lunch menu, prices, hours, ordering, or the <b>Jones’n Sunday Brunch</b> on Oct 25. Tap a question below or type your own.');
+  bubble('bot', 'Hi! I’m the Cape Island Café helper. Ask me about our lunch menu, prices, hours, ordering, or the upcoming <b>Jones’n Sunday Brunch</b>. Tap a question below or type your own.');
   root.fetch('ask-kb.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (kb) {
     bot = createBot(kb);
     var params = new root.URLSearchParams(root.location.search); var pq = params.get('q');

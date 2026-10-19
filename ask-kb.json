@@ -13,9 +13,9 @@
  },
  "event": {
   "name": "Jones’n Sunday Brunch",
-  "date": "Sunday, October 25, 2026",
+  "date": "coming soon",
   "page": "jonesn-sunday-brunch-oct-25.html",
-  "tickets": "Tickets available soon",
+  "tickets": "Details to be announced. Call 774-2-ISLAND or visit for details",
   "note": "Menu and prices are tentative and may change."
  },
  "pages": {
@@ -300,51 +300,6 @@
    "img": "img/menu/decaf-coffee.webp"
   },
   {
-   "name": "Moscow Mule",
-   "price": "$5.50",
-   "section": "Nitro Mocktails",
-   "menu": "lunch",
-   "desc": "Nitro Mocktails are non-alcoholic, nitro-activated, vegan & gluten-free. Serve cold or over ice.",
-   "order": "https://capeislandcafe.square.site/product/mockscowl-mule/U74Q63VH2MX2R5NHCDHL3BB3",
-   "img": "img/menu/moscow-mule.webp"
-  },
-  {
-   "name": "Sangria",
-   "price": "$5.50",
-   "section": "Nitro Mocktails",
-   "menu": "lunch",
-   "desc": "Nitro Mocktails are non-alcoholic, nitro-activated, vegan & gluten-free. Serve cold or over ice.",
-   "order": "https://capeislandcafe.square.site/product/sangria/2W3QOCMKB6XHUQ52GBLPG2VZ",
-   "img": "img/menu/sangria.webp"
-  },
-  {
-   "name": "Mockarita",
-   "price": "$5.50",
-   "section": "Nitro Mocktails",
-   "menu": "lunch",
-   "desc": "Nitro Mocktails are non-alcoholic, nitro-activated, vegan & gluten-free. Serve cold or over ice.",
-   "order": "https://capeislandcafe.square.site/product/mockarita/QOLQZ4VVFSPAEPGMUGP5ACHO",
-   "img": "img/menu/mockarita.webp"
-  },
-  {
-   "name": "Mockapolitan",
-   "price": "$5.50",
-   "section": "Nitro Mocktails",
-   "menu": "lunch",
-   "desc": "Nitro Mocktails are non-alcoholic, nitro-activated, vegan & gluten-free. Serve cold or over ice.",
-   "order": "https://capeislandcafe.square.site/product/mockapolitan/2CZWYKDQDZOH4SNHUT457FQW",
-   "img": "img/menu/mockapolitan.webp"
-  },
-  {
-   "name": "Espresso Martini",
-   "price": "$5.75",
-   "section": "Nitro Mocktails",
-   "menu": "lunch",
-   "desc": "Nitro Mocktails are non-alcoholic, nitro-activated, vegan & gluten-free. Serve cold or over ice.",
-   "order": "https://capeislandcafe.square.site/product/espresso-martini/JAIDH2BA65IQ33YIT6RXMV4I",
-   "img": "img/menu/espresso-martini.webp"
-  },
-  {
    "name": "Build Your Own Lunch Plate",
    "price": "$14.50",
    "section": "Build Your Own",
@@ -374,33 +329,6 @@
      "options": "Chips, Tortilla Chips, Potato Salad, Egg Salad"
     }
    ]
-  },
-  {
-   "name": "Sunday Sunrise",
-   "price": "$7",
-   "section": "Brunch Drinks",
-   "menu": "brunch",
-   "desc": "Orange and pineapple layered over grenadine, finished with sparkling water.",
-   "order": "",
-   "img": ""
-  },
-  {
-   "name": "Virgin Bloody Mary",
-   "price": "$8",
-   "section": "Brunch Drinks",
-   "menu": "brunch",
-   "desc": "Our house mix with an Old Bay rim, crisp celery and a pickled bean.",
-   "order": "",
-   "img": ""
-  },
-  {
-   "name": "Sparkling Cranberry Mule",
-   "price": "$7",
-   "section": "Brunch Drinks",
-   "menu": "brunch",
-   "desc": "Cape cranberry and fresh lime, lifted with ginger beer.",
-   "order": "",
-   "img": ""
   },
   {
    "name": "Coconut Cold Brew",

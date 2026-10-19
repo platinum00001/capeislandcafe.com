@@ -252,7 +252,7 @@ section{padding:84px 0}
 /* v5: per-item Square order links */
 .item-order{flex:0 0 auto;margin-left:6px;font-family:var(--cond);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--charcoal);background:var(--sun);border-radius:999px;padding:3px 10px;line-height:1.4;align-self:center;margin-right:4px;transition:background .15s}
 .item-order:hover,.item-order:focus-visible{background:var(--sun-2)}
-@media (max-width:620px){.item-order{font-size:.72rem;padding:3px 8px;margin-left:4px}}
+@media (max-width:620px){.item-order{font-size:.72rem;padding:0 12px;margin-left:4px}}
 
 /* v6: featured event (Jones'n Sunday Brunch) */
 .event{background:var(--paper)}
@@ -378,3 +378,29 @@ body.nav-open .chat-bubble{display:none}
 .aff-blurb{color:var(--muted);margin-top:6px}
 .aff-disc{margin-top:10px;font-weight:700;color:var(--gold)}
 .aff-cta{display:inline-block;margin-top:14px;font-family:var(--cond);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--gold)}
+
+/* Oct 2026 fixes */
+/* Order buttons: minimum 44x44px tap target */
+.item-order{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 14px;box-sizing:border-box}
+/* Footer links: comfortable tap targets */
+.site-footer li a,.foot-bottom a{display:inline-block;padding:4px 0;min-height:24px}
+/* Brunch page title is now an h1 */
+.event-head h1{font-size:clamp(2.2rem,5vw,3.4rem);margin:8px 0 6px}
+/* Phones: small hero logo so menu heading, address and hours show on the first screen */
+@media (max-width:980px){
+  .hero .wrap{padding-top:20px;gap:12px}
+  .hero-logo{width:min(120px,34%);height:auto}
+}
+@media (max-width:620px){
+  .hero-logo{width:92px;height:auto}
+  .hero h1{font-size:2.4rem;margin:8px 0 6px}
+  .hero p.lead{font-size:1.02rem;margin:6px auto 16px}
+  .hero .call{margin-top:12px}
+}
+/* Phones: show address + hours before the buttons on the home hero */
+@media (max-width:620px){
+  .hero:not(.hero-sm) .wrap>div{display:flex;flex-direction:column;align-items:center}
+  .hero:not(.hero-sm) .call{order:1;margin-top:6px}
+  .hero:not(.hero-sm) .ctas{order:2;margin-top:14px}
+}
+.hero .call svg{flex:0 0 auto}
