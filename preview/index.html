@@ -106,6 +106,7 @@
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../assets/banner/banner.css">
 <link rel="stylesheet" href="../assets/site/updates.css">
+<link rel="stylesheet" href="../assets/site/signup.css">
 <link rel="preload" as="image" href="../assets/banner/poster-strip.jpg" media="(min-width: 768px)">
 <link rel="preload" as="image" href="../assets/banner/poster-mobile.jpg" media="(max-width: 767px)">
 </head>
@@ -395,24 +396,25 @@
   </section>
 
   <!-- ==========================================================
-       EMAIL SIGN-UP (hidden). Activate only once a form endpoint exists:
-       set the form's action to the endpoint URL, remove "disabled"
-       from the fieldset, and remove the "hidden" attribute on the section.
+       EMAIL SIGN-UP. Posts to Supabase RPC public.cafe_signup via signup.js
+       (rows land in cape_island_cafe.email_signups).
        ========================================================== -->
-  <section id="signup" class="signup" hidden aria-labelledby="signup-title">
+  <section id="signup" class="signup" aria-labelledby="signup-title">
     <div class="wrap">
       <div class="signup-card">
         <div>
           <span class="kicker">Stay in the loop</span>
-          <h2 id="signup-title">Get specials and soft opening news</h2>
-          <p>Be the first to hear about specials, new menu items, and soft opening updates.</p>
+          <h2 id="signup-title">Get our lunch specials</h2>
+          <p>Be the first to hear about weekly specials, soup of the day, Ramen Night and catering deals.</p>
         </div>
-        <form class="signup-form" action="#" method="post" data-endpoint="TODO">
-          <fieldset disabled>
+        <form class="signup-form" action="#" method="post" data-source="homepage" novalidate>
+          <fieldset>
             <label class="sr-only" for="signup-email">Email address</label>
             <input id="signup-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" value="">
             <button class="btn btn-order" type="submit">Sign me up</button>
           </fieldset>
+          <p class="signup-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -468,5 +470,6 @@
   </div>
 </footer>
 <script src="../nav.js"></script>
+<script src="../signup.js" defer></script>
 </body>
 </html>
