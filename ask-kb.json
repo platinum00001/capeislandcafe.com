@@ -5,7 +5,7 @@
   "phone": "774-2-ISLAND",
   "tel": "tel:+17742475263",
   "email": "info@capeislandcafe.com",
-  "order": "https://capeislandcafe.square.site/#LGTFBJKYQZEZEGEN6N2H5QOO",
+  "order": "https://capeislandcafe.square.site/s/order",
   "directions": "https://www.google.com/maps/search/?api=1&query=316+Gifford+St%2C+Falmouth%2C+MA+02540",
   "hours": "Lunch: Monday–Friday, 11:00 AM – 3:00 PM",
   "soft": "Soft opening: hours may be extended.",
@@ -26,7 +26,9 @@
   "cheesecakes": "custom-cheesecakes.html",
   "charity": "charity-events.html",
   "recovery": "recovery-cafe.html",
-  "affiliates": "affiliates.html"
+  "affiliates": "affiliates.html",
+  "catering": "catering.html",
+  "ramen": "ramen-night-oct-30.html"
  },
  "items": [
   {
@@ -35,7 +37,7 @@
    "section": "Soups",
    "menu": "lunch",
    "desc": "in a bowl",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/cape-road-chili/N7FBLJWCTSOU4LUIPSNRNJWC",
    "img": "img/menu/cape-road-chili.webp"
   },
   {
@@ -44,7 +46,7 @@
    "section": "Soups",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/kale-and-bean-soup/QE26VN373AHYJ4II7DYV2YNV",
    "img": "img/menu/kale-bean-soup.webp"
   },
   {
@@ -62,7 +64,7 @@
    "section": "Salads",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/harbor-chopped/S4VC7ZIFHC3PBV65LW6CTXQB",
    "img": "img/menu/harbor-chop.webp"
   },
   {
@@ -71,7 +73,7 @@
    "section": "Salads",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/caesar-salad/2MNK5DWFUMJ4TBSZQSC65J2S",
    "img": "img/menu/caesar-salad.webp"
   },
   {
@@ -80,7 +82,7 @@
    "section": "Salads",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/cashew-chicken-salad-plate/AERWYC5AUOPVNCUGY2F5AUYQ",
    "img": "img/menu/cashew-chicken-salad-plate.webp"
   },
   {
@@ -98,7 +100,7 @@
    "section": "Salads",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/island-chef-salad/JHAIEQIQJJOUHOLEKHQJRY2I",
    "img": "img/menu/island-chef.webp"
   },
   {
@@ -125,7 +127,7 @@
    "section": "Bowls",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/chili-bowl/B66EDYABBHQVD2QA7H3LC4ED",
    "img": "img/menu/chili-bowl.webp"
   },
   {
@@ -134,7 +136,7 @@
    "section": "Wraps",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/chicken-black-bean-wrap/KT2TEAM2IGLR3VSM4QLTSCX5",
    "img": "img/menu/chicken-bacon-black-bean-wrap.webp"
   },
   {
@@ -143,7 +145,7 @@
    "section": "Wraps",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/cashew-chicken-wrap/G7Q7HWP5GGIKVMGM2ENUBWIV",
    "img": "img/menu/cashew-chicken-wrap.webp"
   },
   {
@@ -152,7 +154,7 @@
    "section": "Wraps",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/chicken-caesar-wrap/ECE2KWZPAI4XTNZUTE47W4P5",
    "img": "img/menu/chicken-caesar-wrap.webp"
   },
   {
@@ -161,7 +163,7 @@
    "section": "Wraps",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/ham-and-cheese-wrap/73SBUOLOYDQCZWKAB4JUBPR6",
    "img": "img/menu/ham-cheese-wrap.webp"
   },
   {
@@ -170,7 +172,7 @@
    "section": "Wraps",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/chili-wrap/3CU5ZZYKNBCQZJUB7I2TTD4J",
    "img": "img/menu/chili-wrap.webp"
   },
   {
@@ -278,7 +280,7 @@
    "section": "Beverages",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/diet-pepsi/GYJCUOG65EYN6RSFS3ZSY47H",
    "img": "img/menu/diet-pepsi.webp"
   },
   {
@@ -287,7 +289,7 @@
    "section": "Beverages",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/coffee/SW5WHWJNJEK2XFNJZR6NEPRO",
    "img": "img/menu/coffee-regular.webp"
   },
   {
@@ -296,7 +298,7 @@
    "section": "Beverages",
    "menu": "lunch",
    "desc": "",
-   "order": "",
+   "order": "https://capeislandcafe.square.site/product/decaf-coffee/72LVF6SK5NWHL24FEL4LVUWG",
    "img": "img/menu/decaf-coffee.webp"
   },
   {
