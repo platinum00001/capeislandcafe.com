@@ -9,7 +9,8 @@
   "directions": "https://www.google.com/maps/search/?api=1&query=316+Gifford+St%2C+Falmouth%2C+MA+02540",
   "hours": "Lunch: Monday–Friday, 11:00 AM – 3:00 PM",
   "soft": "Soft opening: hours may be extended.",
-  "togo": "Please pack your lunch to go or stay and enjoy!"
+  "togo": "Please pack your lunch to go or stay and enjoy!",
+  "tip": "https://square.link/u/uTopOf42"
  },
  "event": {
   "name": "Jones’n Sunday Brunch",
@@ -64,7 +65,7 @@
    "section": "Salads",
    "menu": "lunch",
    "desc": "",
-   "order": "https://capeislandcafe.square.site/product/harbor-chopped/S4VC7ZIFHC3PBV65LW6CTXQB",
+   "order": "https://capeislandcafe.square.site/product/harbor-chop-salad/S4VC7ZIFHC3PBV65LW6CTXQB",
    "img": "img/menu/harbor-chop.webp"
   },
   {
@@ -136,7 +137,7 @@
    "section": "Wraps",
    "menu": "lunch",
    "desc": "",
-   "order": "https://capeislandcafe.square.site/product/chicken-black-bean-wrap/KT2TEAM2IGLR3VSM4QLTSCX5",
+   "order": "https://capeislandcafe.square.site/product/chicken-bacon-black-bean-wrap/KT2TEAM2IGLR3VSM4QLTSCX5",
    "img": "img/menu/chicken-bacon-black-bean-wrap.webp"
   },
   {
@@ -307,7 +308,7 @@
    "section": "Beverages",
    "menu": "lunch",
    "desc": "",
-   "order": "https://capeislandcafe.square.site/product/mockarita/QOLQZ4VVFSPAEPGMUGP5ACHO",
+   "order": "https://capeislandcafe.square.site/product/island-lime-cooler/QOLQZ4VVFSPAEPGMUGP5ACHO",
    "img": "img/menu/island-lime-cooler.webp"
   },
   {
@@ -316,7 +317,7 @@
    "section": "Beverages",
    "menu": "lunch",
    "desc": "",
-   "order": "https://capeislandcafe.square.site/product/house-mocktail/CKLDDCIGQ2Q4QXHGCVISWRA7",
+   "order": "https://capeislandcafe.square.site/product/cape-island-house-cooler/CKLDDCIGQ2Q4QXHGCVISWRA7",
    "img": "img/menu/cape-island-house-cooler.webp"
   },
   {
@@ -325,7 +326,7 @@
    "section": "Beverages",
    "menu": "lunch",
    "desc": "",
-   "order": "https://capeislandcafe.square.site/product/mockapolitan/2CZWYKDQDZOH4SNHUT457FQW",
+   "order": "https://capeislandcafe.square.site/product/cranberry-citrus-sparkler/2CZWYKDQDZOH4SNHUT457FQW",
    "img": "img/menu/cranberry-citrus-sparkler.webp"
   },
   {
@@ -334,7 +335,7 @@
    "section": "Beverages",
    "menu": "lunch",
    "desc": "",
-   "order": "https://capeislandcafe.square.site/product/sangria-alcohol-free-/2W3QOCMKB6XHUQ52GBLPG2VZ",
+   "order": "https://capeislandcafe.square.site/product/island-berry-punch/2W3QOCMKB6XHUQ52GBLPG2VZ",
    "img": "img/menu/island-berry-punch.webp"
   },
   {
@@ -343,7 +344,7 @@
    "section": "Beverages",
    "menu": "lunch",
    "desc": "",
-   "order": "https://capeislandcafe.square.site/product/espresso-martini-alcohol-free-/JAIDH2BA65IQ33YIT6RXMV4I",
+   "order": "https://capeislandcafe.square.site/product/iced-espresso-cream/JAIDH2BA65IQ33YIT6RXMV4I",
    "img": "img/menu/iced-espresso-cream.webp"
   },
   {
@@ -352,7 +353,7 @@
    "section": "Beverages",
    "menu": "lunch",
    "desc": "",
-   "order": "https://capeislandcafe.square.site/product/moscow-mule-alcohol-free-/U74Q63VH2MX2R5NHCDHL3BB3",
+   "order": "https://capeislandcafe.square.site/product/ginger-lime-fizz/U74Q63VH2MX2R5NHCDHL3BB3",
    "img": "img/menu/ginger-lime-fizz.webp"
   },
   {

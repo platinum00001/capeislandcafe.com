@@ -5,10 +5,12 @@
 (function () {
   var FALLBACK = 'https://capeislandcafe.square.site/s/order';
   var ORDER_LINKS = {
-    'meal-prep-starter': FALLBACK,   /* Meal Prep · Starter, 5 meals ($65) */
-    'meal-prep-weekly':  FALLBACK,   /* Meal Prep · Weekly, 10 meals ($125) */
-    'meal-prep-family':  FALLBACK,   /* Meal Prep · Family, 15 meals ($180) */
-    'cheesecake':        FALLBACK    /* Frozen Ice Cream Cheesecakes */
+    'meal-prep-starter':    'https://capeislandcafe.square.site/product/meal-prep-starter-5-meals-/JIUT627UGRQJ6JHC3QJKG67B',    /* Meal Prep · Starter, 5 meals ($65) */
+    'meal-prep-weekly':     'https://capeislandcafe.square.site/product/meal-prep-weekly-10-meals-/EGCPHAM4CDBWBHG6GVLHGVDR',     /* Meal Prep · Weekly, 10 meals ($125) */
+    'meal-prep-family':     'https://capeislandcafe.square.site/product/meal-prep-family-15-meals-/4UUX4J6TQOAGQ55ADVECYSSF',     /* Meal Prep · Family, 15 meals ($180) */
+    'soup-quart':           'https://capeislandcafe.square.site/product/soup-by-the-quart/C2KNBFI4EEKNIT4N3IWEFJEX',           /* Soup by the quart ($6) */
+    'cheesecake-classic':   'https://capeislandcafe.square.site/product/ice-cream-cheesecake-classic-new-york/EQMKFPEAZJPENI4KJYQVKIUE',   /* Ice Cream Cheesecake · Classic New York ($42) */
+    'cheesecake-signature': 'https://capeislandcafe.square.site/product/ice-cream-cheesecake-signature-flavor/TATLL7VROEBY4UYNYH4C4JSO'  /* Ice Cream Cheesecake · Signature Flavor ($48) */
   };
   window.CIC_ORDER_LINKS = ORDER_LINKS;
   var links = document.querySelectorAll('[data-order-key]');
