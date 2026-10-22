@@ -1,0 +1,114 @@
+/* Cape Island Café: daytime video banner (v2).
+   Every rule is scoped to .cib-hero (or the .hero--with-banner modifier) so it
+   cannot leak into the shared site styles in /styles.css. */
+.cib-hero{
+  --cib-ink:#1e2830; --cib-ink-2:#4a5862; --cib-sand:#fbf6ec;
+  --cib-gold:#f5b800; --cib-gold-deep:#d99a00; --cib-sea:#0f8fa6;
+  --cib-ease:cubic-bezier(.22,.7,.2,1);
+  position:relative;overflow:hidden;isolation:isolate;
+  aspect-ratio:4/1;min-height:340px;max-height:540px;width:100%;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:0 clamp(24px,4.5vw,72px);
+  background:#bfe3f0;color:var(--cib-ink);
+  font-family:"Avenir Next","Montserrat","Barlow","Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;
+  line-height:1.5;-webkit-font-smoothing:antialiased;text-align:left
+}
+.cib-hero *,.cib-hero *::before,.cib-hero *::after{box-sizing:border-box}
+.cib-hero p{margin:0}
+.cib-hero a{color:inherit}
+.cib-hero img{max-width:none}
+
+.cib-hero__stage{display:contents}
+.cib-hero__media{position:absolute;left:0;right:0;top:-11%;bottom:-11%;z-index:-2;will-change:transform}
+.cib-hero__media video,.cib-hero__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block}
+.cib-hero__media picture{display:contents}
+.cib-hero__shade{position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,0) 72%,rgba(251,246,236,.45) 100%)}
+
+/* logo badge */
+.cib-hero__brand{flex:none;height:84%;max-height:420px;aspect-ratio:.9/1;position:relative;will-change:transform,opacity}
+.cib-hero__badge{position:absolute;inset:0;border-radius:28px;
+  background:radial-gradient(120% 100% at 50% 40%,rgba(255,255,255,.92),rgba(255,255,255,.76));
+  backdrop-filter:blur(10px) saturate(1.15);-webkit-backdrop-filter:blur(10px) saturate(1.15);
+  border:1px solid rgba(255,255,255,.85);
+  box-shadow:0 18px 40px -12px rgba(10,60,80,.35),0 2px 0 rgba(255,255,255,.6) inset;
+  opacity:0;transform:scale(.92);animation:cib-pop 1.2s var(--cib-ease) .15s forwards}
+.cib-hero__float{position:absolute;inset:7% 9%;animation:cib-float 6.5s ease-in-out 1.6s infinite}
+.cib-hero__logo{position:absolute;inset:0;opacity:0;transform:scale(.86) translateY(10px);animation:cib-pop 1.3s var(--cib-ease) .35s forwards}
+.cib-hero__logo img{display:block;width:100%;height:100%;object-fit:contain}
+.cib-hero__shine{position:absolute;inset:0;pointer-events:none;
+  -webkit-mask:url(logo-day@2x.png) center/contain no-repeat;mask:url(logo-day@2x.png) center/contain no-repeat;
+  background:linear-gradient(105deg,rgba(255,255,255,0) 40%,rgba(255,250,215,.95) 49%,rgba(255,255,255,1) 50%,rgba(255,250,215,.95) 51%,rgba(255,255,255,0) 60%);
+  background-size:300% 100%;background-position:120% 0;background-repeat:no-repeat;
+  mix-blend-mode:soft-light;opacity:.95;animation:cib-shine 5.5s ease-in-out 2.2s infinite}
+@keyframes cib-pop{to{opacity:1;transform:none}}
+@keyframes cib-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes cib-shine{0%{background-position:120% 0}38%,100%{background-position:-20% 0}}
+
+/* info panel */
+.cib-hero__panel{flex:0 1 600px;min-width:0;padding:22px 26px 18px;border-radius:22px;
+  background:rgba(255,255,255,.74);backdrop-filter:blur(12px) saturate(1.2);-webkit-backdrop-filter:blur(12px) saturate(1.2);
+  border:1px solid rgba(255,255,255,.9);box-shadow:0 18px 40px -14px rgba(10,60,80,.35);
+  opacity:0;transform:translateY(12px);animation:cib-pop 1s var(--cib-ease) .8s forwards;will-change:transform,opacity}
+.cib-ticker{position:relative;height:2.9em;overflow:hidden;font-size:clamp(1rem,1.25vw,1.18rem);font-weight:600;color:var(--cib-ink);display:flex;align-items:center}
+.cib-ticker::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--cib-gold);box-shadow:0 0 0 4px rgba(245,184,0,.22);margin:0 12px 0 5px}
+.cib-ticker__track{position:relative;flex:1;height:100%}
+.cib-hero .cib-ticker__item{position:absolute;inset:0;display:flex;align-items:center;line-height:1.3;opacity:0;transform:translateY(70%);transition:opacity .6s var(--cib-ease),transform .6s var(--cib-ease)}
+.cib-hero .cib-ticker__item.is-on{opacity:1;transform:none}
+.cib-hero .cib-ticker__item.is-off{opacity:0;transform:translateY(-70%)}
+.cib-ticker__dots{display:flex;gap:6px;margin:8px 0 14px 26px}
+.cib-ticker__dots i{width:16px;height:3px;border-radius:2px;background:rgba(30,40,48,.15);transition:background .4s,width .4s}
+.cib-ticker__dots i.on{background:var(--cib-gold-deep);width:26px}
+
+.cib-ctas{display:flex;gap:10px;flex-wrap:wrap}
+.cib-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;height:46px;padding:0 20px;border-radius:999px;border:0;
+  font-family:inherit;font-weight:700;font-size:.95rem;letter-spacing:.02em;text-transform:none;text-decoration:none;white-space:nowrap;
+  transition:transform .25s var(--cib-ease),box-shadow .25s var(--cib-ease),background .25s,border-color .25s}
+.cib-btn svg{width:18px;height:18px;flex:none}
+.cib-btn--primary{background:linear-gradient(180deg,#ffd447 0%,#f5b400 100%);color:#2a1f00;box-shadow:0 8px 20px -6px rgba(217,154,0,.65),inset 0 1px 0 rgba(255,255,255,.6)}
+.cib-btn--primary:hover{transform:translateY(-2px);box-shadow:0 12px 24px -6px rgba(217,154,0,.75),inset 0 1px 0 rgba(255,255,255,.6)}
+.cib-btn--ghost{background:rgba(255,255,255,.7);color:var(--cib-ink);border:1.5px solid rgba(30,40,48,.22)}
+.cib-btn--ghost:hover{transform:translateY(-2px);border-color:var(--cib-gold-deep);background:#fff}
+.cib-btn:focus-visible{outline:3px solid var(--cib-sea);outline-offset:3px}
+.cib-hero .cib-meta{margin-top:14px;font-size:.84rem;color:var(--cib-ink-2);letter-spacing:.02em}
+.cib-meta span{white-space:nowrap}
+.cib-meta i{font-style:normal;color:var(--cib-gold-deep);margin:0 .5em}
+.cib-hero .cib-meta a{text-decoration:none;font-weight:600;color:var(--cib-ink)}
+
+/* tablet */
+@media (max-width:1100px) and (min-width:768px){
+  .cib-hero{aspect-ratio:auto;height:360px}
+  .cib-btn{height:42px;padding:0 15px;font-size:.88rem}
+  .cib-hero__panel{padding:18px 20px 14px}
+}
+/* mobile: 4:3 video stage with the panel overlapping below */
+@media (max-width:767px){
+  .cib-hero{aspect-ratio:auto;min-height:0;max-height:none;height:auto;display:block;padding:0 0 18px;background:var(--cib-sand)}
+  .cib-hero__stage{position:relative;aspect-ratio:4/3;width:100%;overflow:hidden;display:grid;place-items:center;z-index:0;isolation:isolate}
+  .cib-hero__media{top:-10%;bottom:-10%}
+  .cib-hero__brand{height:74%;max-height:none;margin-top:-5%}
+  .cib-hero__badge{border-radius:24px}
+  .cib-hero__panel{margin:-28px 14px 0;position:relative;z-index:1;padding:18px 18px 16px;background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .cib-ticker{height:3.1em;font-size:1rem}
+  .cib-ctas{display:grid;grid-template-columns:1fr 1fr}
+  .cib-ctas .cib-btn--primary{grid-column:1/-1}
+  .cib-btn{height:48px}
+  .cib-meta{text-align:center}
+  .cib-meta .cib-sep{display:block;height:0;overflow:hidden;margin:0}
+}
+/* reduced motion: poster only, no animation */
+@media (prefers-reduced-motion:reduce){
+  .cib-hero__media video{display:none!important}
+  .cib-hero__badge,.cib-hero__logo,.cib-hero__panel{animation:none!important;opacity:1;transform:none}
+  .cib-hero__float,.cib-hero__shine{animation:none!important}
+  .cib-hero__shine{display:none}
+  .cib-hero .cib-ticker__item,.cib-btn{transition:none}
+}
+
+/* Existing dark "Lunch Menu" hero under the banner: its big logo image was
+   removed (the banner now shows the logo), so make it a single centred column. */
+.hero.hero--with-banner .wrap{grid-template-columns:1fr;text-align:center;padding-top:48px;padding-bottom:56px}
+.hero.hero--with-banner .eyebrow{justify-content:center}
+.hero.hero--with-banner .eyebrow::after{content:"";width:40px;height:2px;background:var(--sun)}
+.hero.hero--with-banner p.lead{margin-left:auto;margin-right:auto}
+.hero.hero--with-banner .ctas,.hero.hero--with-banner .call{justify-content:center}
