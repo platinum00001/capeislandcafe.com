@@ -59,7 +59,7 @@
    "img": "../img/menu/roasted-tomato-red-pepper.webp"
   },
   {
-   "name": "Harbor Chop",
+   "name": "Harbor Chop Salad",
    "price": "$15.00",
    "section": "Salads",
    "menu": "lunch",
@@ -95,7 +95,7 @@
    "img": "../img/menu/kale-crunch.webp"
   },
   {
-   "name": "Island Chef",
+   "name": "Island Chef Salad",
    "price": "$14.50",
    "section": "Salads",
    "menu": "lunch",
@@ -300,6 +300,60 @@
    "desc": "",
    "order": "https://capeislandcafe.square.site/product/decaf-coffee/72LVF6SK5NWHL24FEL4LVUWG",
    "img": "../img/menu/decaf-coffee.webp"
+  },
+  {
+   "name": "Mockarita",
+   "price": "$5.50",
+   "section": "Beverages",
+   "menu": "lunch",
+   "desc": "Alcohol-free mocktail",
+   "order": "https://capeislandcafe.square.site/product/mockarita/QOLQZ4VVFSPAEPGMUGP5ACHO",
+   "img": "../img/menu/mockarita.webp"
+  },
+  {
+   "name": "House Mocktail",
+   "price": "$5.00",
+   "section": "Beverages",
+   "menu": "lunch",
+   "desc": "Alcohol-free mocktail",
+   "order": "https://capeislandcafe.square.site/product/house-mocktail/CKLDDCIGQ2Q4QXHGCVISWRA7",
+   "img": "../img/menu/house-mocktail.webp"
+  },
+  {
+   "name": "Mockapolitan",
+   "price": "$5.50",
+   "section": "Beverages",
+   "menu": "lunch",
+   "desc": "Alcohol-free mocktail",
+   "order": "https://capeislandcafe.square.site/product/mockapolitan/2CZWYKDQDZOH4SNHUT457FQW",
+   "img": "../img/menu/mockapolitan.webp"
+  },
+  {
+   "name": "Sangria (Alcohol-Free)",
+   "price": "$5.50",
+   "section": "Beverages",
+   "menu": "lunch",
+   "desc": "Alcohol-free mocktail",
+   "order": "https://capeislandcafe.square.site/product/sangria-alcohol-free-/2W3QOCMKB6XHUQ52GBLPG2VZ",
+   "img": "../img/menu/sangria.webp"
+  },
+  {
+   "name": "Espresso Martini (Alcohol-Free)",
+   "price": "$5.75",
+   "section": "Beverages",
+   "menu": "lunch",
+   "desc": "Alcohol-free mocktail",
+   "order": "https://capeislandcafe.square.site/product/espresso-martini-alcohol-free-/JAIDH2BA65IQ33YIT6RXMV4I",
+   "img": "../img/menu/espresso-martini.webp"
+  },
+  {
+   "name": "Moscow Mule (Alcohol-Free)",
+   "price": "$5.50",
+   "section": "Beverages",
+   "menu": "lunch",
+   "desc": "Alcohol-free mocktail",
+   "order": "https://capeislandcafe.square.site/product/moscow-mule-alcohol-free-/U74Q63VH2MX2R5NHCDHL3BB3",
+   "img": "../img/menu/moscow-mule.webp"
   },
   {
    "name": "Build Your Own Lunch Plate",
