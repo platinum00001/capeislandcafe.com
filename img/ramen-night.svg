@@ -23,7 +23,7 @@
   <ellipse cx="-34" cy="10" rx="44" ry="50" fill="#d9731c"/><ellipse cx="34" cy="10" rx="44" ry="50" fill="#d9731c"/><ellipse cx="0" cy="8" rx="46" ry="54" fill="#ee8a26"/>
   <path d="M0 -44 C-4 -60 4 -72 14 -78" stroke="#5b4a2a" stroke-width="9" fill="none" stroke-linecap="round"/>
 </g>
-<!-- mocktail glass -->
+<!-- drink glass -->
 <g transform="translate(330 450)" filter="url(#sh)">
   <rect x="-62" y="-110" width="124" height="220" rx="16" fill="#ffffff22" stroke="#ffffff66" stroke-width="4"/>
   <rect x="-54" y="-60" width="108" height="162" rx="10" fill="#d0452e" opacity=".85"/>

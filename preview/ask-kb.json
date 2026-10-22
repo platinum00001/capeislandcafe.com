@@ -302,58 +302,58 @@
    "img": "../img/menu/decaf-coffee.webp"
   },
   {
-   "name": "Mockarita",
+   "name": "Island Lime Cooler",
    "price": "$5.50",
    "section": "Beverages",
    "menu": "lunch",
-   "desc": "Alcohol-free mocktail",
+   "desc": "",
    "order": "https://capeislandcafe.square.site/product/mockarita/QOLQZ4VVFSPAEPGMUGP5ACHO",
-   "img": "../img/menu/mockarita.webp"
+   "img": "../img/menu/island-lime-cooler.webp"
   },
   {
-   "name": "House Mocktail",
+   "name": "Cape Island House Cooler",
    "price": "$5.00",
    "section": "Beverages",
    "menu": "lunch",
-   "desc": "Alcohol-free mocktail",
+   "desc": "",
    "order": "https://capeislandcafe.square.site/product/house-mocktail/CKLDDCIGQ2Q4QXHGCVISWRA7",
-   "img": "../img/menu/house-mocktail.webp"
+   "img": "../img/menu/cape-island-house-cooler.webp"
   },
   {
-   "name": "Mockapolitan",
+   "name": "Cranberry Citrus Sparkler",
    "price": "$5.50",
    "section": "Beverages",
    "menu": "lunch",
-   "desc": "Alcohol-free mocktail",
+   "desc": "",
    "order": "https://capeislandcafe.square.site/product/mockapolitan/2CZWYKDQDZOH4SNHUT457FQW",
-   "img": "../img/menu/mockapolitan.webp"
+   "img": "../img/menu/cranberry-citrus-sparkler.webp"
   },
   {
-   "name": "Sangria (Alcohol-Free)",
+   "name": "Island Berry Punch",
    "price": "$5.50",
    "section": "Beverages",
    "menu": "lunch",
-   "desc": "Alcohol-free mocktail",
+   "desc": "",
    "order": "https://capeislandcafe.square.site/product/sangria-alcohol-free-/2W3QOCMKB6XHUQ52GBLPG2VZ",
-   "img": "../img/menu/sangria.webp"
+   "img": "../img/menu/island-berry-punch.webp"
   },
   {
-   "name": "Espresso Martini (Alcohol-Free)",
+   "name": "Iced Espresso Cream",
    "price": "$5.75",
    "section": "Beverages",
    "menu": "lunch",
-   "desc": "Alcohol-free mocktail",
+   "desc": "",
    "order": "https://capeislandcafe.square.site/product/espresso-martini-alcohol-free-/JAIDH2BA65IQ33YIT6RXMV4I",
-   "img": "../img/menu/espresso-martini.webp"
+   "img": "../img/menu/iced-espresso-cream.webp"
   },
   {
-   "name": "Moscow Mule (Alcohol-Free)",
+   "name": "Ginger Lime Fizz",
    "price": "$5.50",
    "section": "Beverages",
    "menu": "lunch",
-   "desc": "Alcohol-free mocktail",
+   "desc": "",
    "order": "https://capeislandcafe.square.site/product/moscow-mule-alcohol-free-/U74Q63VH2MX2R5NHCDHL3BB3",
-   "img": "../img/menu/moscow-mule.webp"
+   "img": "../img/menu/ginger-lime-fizz.webp"
   },
   {
    "name": "Build Your Own Lunch Plate",

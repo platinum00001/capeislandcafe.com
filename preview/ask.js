@@ -128,7 +128,7 @@
           actions: [CALL, a('See the menu', P.menu)] }; } },
       { id: 'byo', w: { byo: 3, custom: 1, choose: 1 }, p: { 'build your own': 3, 'own plate': 3, 'lunch plate': 2 }, f: function () {
         var it = kb.items.filter(function (i) { return i.name === 'Build Your Own Lunch Plate'; })[0]; return itemAnswer(it); } },
-      { id: 'drinks', w: { drink: 2, beverage: 2, soda: 2, mocktail: 2.5, nitro: 2.5, alcohol: 2, alcoholic: 2, beer: 2, wine: 2, cocktail: 2 }, f: function (q) {
+      { id: 'drinks', w: { drink: 2, beverage: 2, soda: 2, mocktail: 2.5, refresher: 2.5, cooler: 2, sparkler: 2, punch: 2, fizz: 2, nitro: 2.5, alcohol: 2, alcoholic: 2, beer: 2, wine: 2, cocktail: 2 }, f: function (q) {
         var b = bySection('Beverages');
         var al = /alcohol|beer|wine|cocktail/.test(q) ? 'Our drink menu is non-alcoholic. ' : '';
         return { html: al + '<b>Beverages</b>' + list(b),
@@ -159,8 +159,8 @@
         return { html: '<b>Catering &amp; private events:</b> host your gathering in our café Monday through Thursday, for up to 50 guests, starting at $25 per person. We also cater on-site for offices, parties and celebrations. Email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a> or call <a href="' + B.tel + '">' + esc(B.phone) + '</a> with your date and guest count.',
           speak: 'We host private events in our café Monday through Thursday for up to 50 guests, starting at 25 dollars per person, and we cater on-site too.', actions: [a('Catering & Private Events', P.catering || 'catering.html', true), MAIL, CALL] }; } },
       { id: 'ramen', w: { ramen: 3.5, noodle: 2.5, noodles: 2.5, halloween: 2, '30': 1, '30th': 1.5 }, p: { 'ramen night': 3 }, f: function () {
-        return { html: '<b>Ramen Night</b> is Friday, October 30: one night only, a cozy three-course ramen dinner paired with a handcrafted mocktail. $45 per person. Limited seats. Tickets available soon; call <a href="' + B.tel + '">' + esc(B.phone) + '</a> to hold a seat.',
-          speak: 'Ramen Night is Friday, October 30. A three course ramen dinner with a handcrafted mocktail, 45 dollars per person. Call to hold a seat.', actions: [a('Ramen Night', P.ramen || 'ramen-night-oct-30.html', true), CALL] }; } },
+        return { html: '<b>Ramen Night</b> is Friday, October 30: one night only, a cozy three-course ramen dinner paired with a handcrafted refresher. $45 per person. Limited seats. Tickets available soon; call <a href="' + B.tel + '">' + esc(B.phone) + '</a> to hold a seat.',
+          speak: 'Ramen Night is Friday, October 30. A three course ramen dinner with a handcrafted refresher, 45 dollars per person. Call to hold a seat.', actions: [a('Ramen Night', P.ramen || 'ramen-night-oct-30.html', true), CALL] }; } },
       { id: 'charity', w: { charity: 3, fundraiser: 3, fundraising: 3, donate: 2.5, donation: 2.5, nonprofit: 2.5, volunteer: 2 }, f: function () {
         return { html: '<b>Charity events</b> are coming soon. To get involved, email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a>.', speak: 'Charity events are coming soon. Email us to get involved.', actions: [a('Charity Events', P.charity, true), MAIL] }; } },
       { id: 'affiliates', w: { affiliate: 3, affiliates: 3, partner: 3, partners: 3, partnership: 3, sponsor: 3, sponsors: 3, discount: 3, discounts: 3, coupon: 2.5, deal: 2, deals: 2, promo: 2, savings: 2, save: 1.5 }, f: function () {
@@ -169,7 +169,7 @@
       { id: 'reserve', w: { reservation: 3, reserve: 3, book: 1.5, booking: 2, table: 1.5 }, f: function () {
         return { html: 'Lunch is to go or stay. To ask about reservations or larger groups, call <a href="tel:+17742475263">774-2-ISLAND</a>. Jones’n Sunday Brunch: ' + esc(E.tickets) + '.', speak: 'Lunch is to go or stay. To ask about reservations, call 774-2-ISLAND. For the Sunday brunch, details will be announced.', actions: [CALL, a('View the brunch menu', E.page)] }; } },
       { id: 'pricerange', w: { expensive: 2, cheap: 2, affordable: 2 }, p: { 'how much': 1, 'price range': 3, 'prices': 1 }, f: function () {
-        return { html: 'Lunch soups are $8.00, salads $11.00–$15.00, bowls $12.50–$16.50, wraps $14.00–$14.50, and the Build Your Own Lunch Plate is $14.50. Drinks are $3.50, and mocktails are $5.00–$5.75.', speak: 'Soups are 8 dollars, salads 11 to 15, bowls 12 50 to 16 50, wraps around 14, and the build your own plate is 14 50.', actions: [a('See the full menu', P.menu, true)] }; } }
+        return { html: 'Lunch soups are $8.00, salads $11.00–$15.00, bowls $12.50–$16.50, wraps $14.00–$14.50, and the Build Your Own Lunch Plate is $14.50. Drinks are $3.50, and our refreshers are $5.00–$5.75.', speak: 'Soups are 8 dollars, salads 11 to 15, bowls 12 50 to 16 50, wraps around 14, and the build your own plate is 14 50.', actions: [a('See the full menu', P.menu, true)] }; } }
     ];
 
     function scoreIntent(intent, toks, qn) {
