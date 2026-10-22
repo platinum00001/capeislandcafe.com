@@ -319,5 +319,5 @@
     var params = new root.URLSearchParams(root.location.search); var pq = params.get('q');
     queue.splice(0).forEach(function (q) { var r = bot.answer(q); bubble('bot', r.html, r.actions, r.img); });
     if (pq) ask(pq);
-  }).catch(function () { bubble('bot', 'Sorry, I couldn’t load our menu info. Please call <a href="tel:+17742475263">774-2-ISLAND</a> or email <a href="mailto:info@capeislandcafe.com">info@capeislandcafe.com</a>.'); });
+  }).catch(function () { bubble('bot', 'Sorry, I couldn’t load our menu info. Please call <a href="tel:+17742475263">774-2-ISLAND</a> or email <a href="mailto:CapeIslandCafe@gmail.com">CapeIslandCafe@gmail.com</a>.'); });
 })(typeof window !== 'undefined' ? window : this);
