@@ -2,7 +2,7 @@
 :root{
   --charcoal:#1b1e23; --charcoal-2:#24282e; --navy:#0b1a3b; --navy-2:#13285a;
   --gold:#bd8322; --gold-soft:#c99d55; --sun:#fdcb2e; --sun-2:#ffd95a;
-  --cream:#fbf8f1; --paper:#ffffff; --line:#e7dcc6; --ink:#1d2433; --muted:#5a6272;
+  --cream:#fbf8f1; --paper:#ffffff; --line:#e7dcc6; --ink:#1d2433; --muted:#5a6272; --gold-text:#8a5d14;
   --serif:"Libre Baskerville",Georgia,"Times New Roman",serif;
   --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --cond:"Barlow Condensed","Barlow",system-ui,sans-serif;
@@ -100,7 +100,7 @@ h1,h2,h3{font-family:var(--serif);color:var(--navy);line-height:1.18;font-weight
 /* ---------- Sections ---------- */
 section{padding:84px 0}
 .sec-head{text-align:center;max-width:700px;margin:0 auto 46px}
-.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-size:.95rem}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-text);font-size:.95rem}
 .sec-head h2{font-size:clamp(2rem,4.2vw,3rem);margin:8px 0 12px}
 .sec-head p{color:var(--muted)}
 .rule{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px auto 0;width:180px}
@@ -144,7 +144,7 @@ section{padding:84px 0}
 .menu-cat.wide{grid-column:1/-1}
 .menu-note{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--gold-soft);border-radius:14px;padding:16px 18px;margin-top:14px;background:#fffcf3;color:#333b4a}
 .menu-note svg{width:30px;height:30px;color:var(--gold);flex:0 0 auto}
-.drinks-sub{font-family:var(--sans);color:var(--gold);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:18px 0 4px;font-size:1.1rem}
+.drinks-sub{font-family:var(--sans);color:var(--gold-text);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:18px 0 4px;font-size:1.1rem}
 
 .order-band{background:linear-gradient(135deg,var(--charcoal),#2a2f37);color:#fff;border-radius:28px;padding:48px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;margin-top:56px}
 .order-band h2{color:#fff;font-size:clamp(1.7rem,3.4vw,2.3rem)}
@@ -416,3 +416,11 @@ body.nav-open .chat-bubble{display:none}
 .social-follow--light .social-label{color:var(--gold)}
 .social-follow--light .social-links a{background:var(--navy);color:#fff}
 .social-follow--light .social-links a:hover{background:var(--sun);color:var(--charcoal)}
+
+/* wishlist-fixes */
+.give{padding:40px 0;background:var(--cream)}
+.give-wrap{text-align:center}.give h2{margin-bottom:16px}
+.give-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.social{list-style:none;display:flex;flex-wrap:wrap;gap:18px;padding:16px 0 0;margin:0}
+.social a{color:#fff;text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:3px solid #fdcb2e;outline-offset:2px}
