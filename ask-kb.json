@@ -133,6 +133,15 @@
    "img": "img/menu/chili-bowl.webp"
   },
   {
+   "name": "Loaded Baked Potato",
+   "price": "$9.99",
+   "section": "Bowls",
+   "menu": "lunch",
+   "desc": "Baked potato topped with cheddar, bacon & Cape Road Chili.",
+   "order": "",
+   "img": "img/menu/loaded-baked-potato.webp"
+  },
+  {
    "name": "Chicken Bacon Black Bean Wrap",
    "price": "$14.50",
    "section": "Wraps",
@@ -178,22 +187,13 @@
    "img": "img/menu/chili-wrap.webp"
   },
   {
-   "name": "Loaded Baked Potato",
-   "price": "$9.99",
-   "section": "Baked Potatoes",
-   "menu": "lunch",
-   "desc": "Baked potato topped with cheddar, bacon & Cape Road Chili.",
-   "order": "",
-   "img": ""
-  },
-  {
    "name": "Baked Potato BLT Wrap",
    "price": "$14.50",
    "section": "Wraps",
    "menu": "lunch",
    "desc": "Loaded potato, bacon, romaine, tomato.",
    "order": "",
-   "img": ""
+   "img": "img/menu/baked-potato-blt-wrap.webp"
   },
   {
    "name": "Salmon Salad Wrap",
@@ -202,7 +202,7 @@
    "menu": "lunch",
    "desc": "House salmon salad, spinach, tomato.",
    "order": "",
-   "img": ""
+   "img": "img/menu/salmon-salad-wrap.webp"
   },
   {
    "name": "Avocado",
