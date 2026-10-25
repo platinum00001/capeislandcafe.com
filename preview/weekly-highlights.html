@@ -38,6 +38,9 @@
 .wh-ph{aspect-ratio:4/3;background:#e8e4dc;border-radius:16px;margin-bottom:16px;display:grid;place-items:center;color:#8a8478;font-family:var(--cond);letter-spacing:.08em;text-transform:uppercase;font-size:.9rem}
 .wh-badge{display:inline-block;background:var(--sun);color:var(--charcoal);font-family:var(--cond);font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:14px;font-size:.85rem}
 .wh-img{display:block;width:100%;height:auto;border-radius:16px;margin-bottom:16px;background:#e8e4dc}
+.wh-photo{aspect-ratio:4/3;object-fit:cover}
+#featured-guest .wh-photo{object-position:50% 30%}
+#featured-business .wh-img{aspect-ratio:4/3;object-fit:contain;background:#0b1a3b}
 </style>
 </head>
 <body>
@@ -85,7 +88,7 @@
       <span class="eyebrow">Cape Island Café · Falmouth</span>
       <h1>Weekly Highlights</h1>
       <p><span class="tix">Latest Updates</span></p>
-      <p class="lead">What’s new this week: our special, the locals we love seeing, and a Falmouth business we’re featuring.</p>
+      <p class="lead">What’s new this week: our special, a featured guest, and a Falmouth business we’re featuring.</p>
       <div class="ctas"><a class="btn btn-order btn-lg" href="https://capeislandcafe.square.site/s/order" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 14H5z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>Order Now<span class="sr-only"> (opens in a new tab)</span></a><a class="btn btn-outline" href="index.html#menu">See the lunch menu</a></div>
     </div>
   </section>
@@ -97,17 +100,24 @@
 
         <article class="card" id="special-of-the-week">
           <span class="wh-badge">Special of the Week</span>
-          <div class="wh-ph">Photo placeholder</div>
-          <h3>[Dish or weekly special name]</h3>
-          <p style="color:var(--muted);margin:8px 0 14px">[Short blurb: what’s on the plate, price, and why we’re featuring it this week.]</p>
-          <p><strong style="color:var(--charcoal)">$[PRICE]</strong> · <a href="index.html#menu">Order →</a></p>
+          <picture>
+            <source srcset="../img/weekly/frozen-cheesecake.webp" type="image/webp">
+            <img class="wh-img wh-photo" src="../img/weekly/frozen-cheesecake.jpg" alt="Ice cream cheesecake slices topped with strawberries, blueberries, peach, banana and chocolate" width="1200" height="1117" loading="lazy" decoding="async">
+          </picture>
+          <h3>Frozen Cheesecake</h3>
+          <p style="color:var(--muted);margin:8px 0 14px">This week’s special: our ice cream cheesecakes — creamy frozen slices with toppings like strawberry, blueberry, peach, banana, and chocolate. Perfect for sharing or taking home. Classic New York from $42; signature $48; custom from $55.</p>
+          <p class="wh-details"><a href="custom-cheesecakes.html">Ice Cream Cheesecakes →</a></p>
         </article>
 
-        <article class="card" id="local-visitors">
-          <span class="wh-badge">Local Visitors of the Week</span>
-          <div class="wh-ph">Photo placeholder</div>
-          <h3>[Names or “Falmouth regulars”]</h3>
-          <p style="color:var(--muted);margin:8px 0 14px">[A warm shout-out to guests who stopped in this week: first names or a group, what they ordered, and a thank-you.]</p>
+        <article class="card" id="featured-guest">
+          <span class="wh-badge">Featured Guest of the Week</span>
+          <picture>
+            <source srcset="../img/weekly/featured-guest.webp" type="image/webp">
+            <img class="wh-img wh-photo" src="../img/weekly/featured-guest.jpg" alt="This week’s featured guest at Cape Island Café, holding an Espresso Martini mocktail" width="1200" height="1200" loading="lazy" decoding="async">
+          </picture>
+          <h3>Espresso Martini mocktail inspiration</h3>
+          <p style="color:var(--muted);margin:8px 0 14px">A warm thank-you to this week’s featured guest, who stopped by and helped invent our amazing Espresso Martini nitro mocktail. Come try it — $5.75 — and say hi next time you’re in.</p>
+          <p class="wh-details"><a href="index.html#menu">See the menu →</a></p>
         </article>
 
         <article class="card" id="featured-business">
@@ -131,7 +141,7 @@
       <div class="soon-card">
         <span class="badge">Updated weekly</span>
         <h2>Fresh every Monday</h2>
-        <p>Every week we share a new special, give a shout-out to local visitors, and feature a Falmouth business we love. Know someone we should feature? Let us know.</p>
+        <p>Every week we share a new special, thank a featured guest, and feature a Falmouth business we love. Know someone we should feature? Let us know.</p>
         <div class="ctas">
           <a class="btn btn-navy" href="mailto:CapeIslandCafe@gmail.com?subject=Weekly%20Highlights%20suggestion"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Suggest a feature</a>
           <a class="btn btn-navy" href="tel:+17742475263"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>774-2-ISLAND</a>
