@@ -178,6 +178,33 @@
    "img": "../img/menu/chili-wrap.webp"
   },
   {
+   "name": "Loaded Baked Potato",
+   "price": "$9.99",
+   "section": "Baked Potatoes",
+   "menu": "lunch",
+   "desc": "Baked potato topped with cheddar, bacon & Cape Road Chili.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Baked Potato BLT Wrap",
+   "price": "$14.50",
+   "section": "Wraps",
+   "menu": "lunch",
+   "desc": "Loaded potato, bacon, romaine, tomato.",
+   "order": "",
+   "img": ""
+  },
+  {
+   "name": "Salmon Salad Wrap",
+   "price": "$15.00",
+   "section": "Wraps",
+   "menu": "lunch",
+   "desc": "House salmon salad, spinach, tomato.",
+   "order": "",
+   "img": ""
+  },
+  {
    "name": "Avocado",
    "price": "$2.50",
    "section": "Add-Ons",

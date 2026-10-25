@@ -416,3 +416,8 @@ body.nav-open .chat-bubble{display:none}
 .social-follow--light .social-label{color:var(--gold)}
 .social-follow--light .social-links a{background:var(--navy);color:#fff}
 .social-follow--light .social-links a:hover{background:var(--sun);color:var(--charcoal)}
+
+/* New menu items (text-only until photos arrive) */
+.menu-cat li.has-desc{flex-wrap:wrap}
+.menu-cat li .ds{flex-basis:100%;color:var(--muted);font-size:.92rem;line-height:1.4;margin-top:2px}
+.menu-cat .new-tag{font-style:normal;font-family:var(--cond);font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;background:var(--sun);color:var(--charcoal);padding:2px 7px;border-radius:999px;vertical-align:2px;margin-left:4px}

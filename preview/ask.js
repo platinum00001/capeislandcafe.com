@@ -115,7 +115,7 @@
       { id: 'contact', w: { contact: 2, phone: 2, call: 1.5, email: 2, reach: 1.5, number: 1.5, talk: 1, someone: 1 }, f: function () {
         return { html: 'Call <a href="' + B.tel + '">' + esc(B.phone) + '</a> or email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a>.', speak: 'Call 774 2 ISLAND, or email info at cape island cafe dot com.', actions: [CALL, MAIL] }; } },
       { id: 'menu', w: { menu: 2, food: 1.5, eat: 1.5, serve: 1.5, dish: 1, offer: 1, option: 0.5, selection: 1 }, p: { 'lunch menu': 2, 'what do you have': 1.5 }, f: function () {
-        var secs = ['Soups', 'Salads', 'Bowls', 'Wraps'];
+        var secs = ['Soups', 'Salads', 'Bowls', 'Wraps', 'Baked Potatoes'];
         var h = 'Our lunch menu has:<ul class="ans-list sec">' + secs.map(function (s) {
           var arr = bySection(s); return '<li><span><b>' + s + '</b>: ' + arr.map(function (i) { return esc(i.name); }).join(', ') + '</span></li>'; }).join('') +
           '</ul>Plus the <b>Build Your Own Lunch Plate</b> ($14.50), add-ons and beverages.';
@@ -221,6 +221,8 @@
         var sp = hits.filter(function (h) { return h.mk === hits[0].mk; });
         return sp.length === 1 ? itemAnswer(sp[0].x.it) : itemsAnswer(sp.slice(0, 6).map(function (h) { return h.x.it; }));
       }
+      var m2 = hits.filter(function (h) { return h.matched >= 2 && h.frac >= 0.5; });
+      if (m2.length === 1) return itemAnswer(m2[0].x.it);
       if (best && bs >= 1.5) { var r = best.f(qn); r.intent = best.id; return r; }
       if (hits.length) {
         var strong = hits.filter(function (h) { return h.mk === hits[0].mk; });
