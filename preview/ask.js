@@ -115,7 +115,7 @@
       { id: 'contact', w: { contact: 2, phone: 2, call: 1.5, email: 2, reach: 1.5, number: 1.5, talk: 1, someone: 1 }, f: function () {
         return { html: 'Call <a href="' + B.tel + '">' + esc(B.phone) + '</a> or email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a>.', speak: 'Call 774 2 ISLAND, or email info at cape island cafe dot com.', actions: [CALL, MAIL] }; } },
       { id: 'menu', w: { menu: 2, food: 1.5, eat: 1.5, serve: 1.5, dish: 1, offer: 1, option: 0.5, selection: 1 }, p: { 'lunch menu': 2, 'what do you have': 1.5 }, f: function () {
-        var secs = ['Soups', 'Salads', 'Bowls', 'Wraps'];
+        var secs = ['Soups', 'Salads', 'Bowls', 'Wraps', 'Sides'];
         var h = 'Our lunch menu has:<ul class="ans-list sec">' + secs.map(function (s) {
           var arr = bySection(s); return '<li><span><b>' + s + '</b>: ' + arr.map(function (i) { return esc(i.name); }).join(', ') + '</span></li>'; }).join('') +
           '</ul>Plus the <b>Build Your Own Lunch Plate</b> ($14.50), add-ons and beverages.';
@@ -137,6 +137,7 @@
       { id: 'salads', w: { salad: 2.5 }, f: function () { var x = bySection('Salads'); return { html: '<b>Salads</b>' + list(x), speak: 'Our salads: ' + speakList(x) + '.', actions: [ORDER] }; } },
       { id: 'bowls', w: { bowl: 2.5 }, f: function () { var x = bySection('Bowls'); return { html: '<b>Bowls</b>' + list(x) + '<small>Bowls are served over chicken-broth rice.</small>', speak: 'Our bowls: ' + speakList(x) + '.', actions: [ORDER] }; } },
       { id: 'wraps', w: { wrap: 2.5 }, f: function () { var x = bySection('Wraps'); return { html: '<b>Wraps</b>' + list(x), speak: 'Our wraps: ' + speakList(x) + '.', actions: [ORDER] }; } },
+      { id: 'sides', w: { side: 2.5, sides: 2.5 }, f: function () { var x = bySection('Sides'); return { html: '<b>Sides</b>' + list(x, true), speak: 'Our sides: ' + speakList(x) + '.', actions: [ORDER] }; } },
       { id: 'addons', w: { addon: 2.5, add: 1.5, extra: 2, topping: 2 }, p: { 'add on': 2.5 }, f: function () { var x = bySection('Add-Ons'); return { html: '<b>Add-Ons</b>' + list(x), speak: 'Add-ons: ' + speakList(x) + '.', actions: [ORDER] }; } },
       { id: 'brunch', w: { brunch: 3, jone: 3, jones: 3, jonesn: 3, ticket: 2.5, event: 1.5, october: 2, oct: 2, '25': 1.5, '25th': 1.5, sunday: 1.2 }, f: function () {
         var cnt = kb.items.filter(function (i) { return i.menu === 'brunch'; }).length;
@@ -211,6 +212,7 @@
         var top = full[0];
         var supers = hits.filter(function (h) { return h !== top && !h.full && top.x.toks.every(function (t) { return h.x.toks.indexOf(t) >= 0; }); });
         var mentionsBrunch = /brunch|sunday|jones/.test(qn);
+        if (/\bplain\b/.test(qn)) return itemAnswer(top.x.it);
         var pool = supers.length ? [top].concat(supers) : [top];
         if (mentionsBrunch) { var b = pool.filter(function (h) { return h.x.it.menu === 'brunch'; }); if (b.length) pool = b; }
         if (!(best && bs >= 3 && best.id !== 'brunch' && top.x.toks.length === 1 && ['hours', 'location', 'contact', 'order'].indexOf(best.id) >= 0)) {
