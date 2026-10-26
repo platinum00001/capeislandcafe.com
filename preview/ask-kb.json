@@ -39,7 +39,7 @@
    "price": "$8.00",
    "section": "Soups",
    "menu": "lunch",
-   "desc": "in a bowl",
+   "desc": "Beef, kidney & black beans, tomato, onion, peppers; cheddar on top.",
    "order": "https://capeislandcafe.square.site/product/cape-road-chili/N7FBLJWCTSOU4LUIPSNRNJWC",
    "img": "../img/menu/cape-road-chili.webp"
   },
@@ -48,7 +48,7 @@
    "price": "$8.00",
    "section": "Soups",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Kale, kidney beans, tomato, onion, garlic, shredded chicken, broth.",
    "order": "https://capeislandcafe.square.site/product/kale-and-bean-soup/QE26VN373AHYJ4II7DYV2YNV",
    "img": "../img/menu/kale-bean-soup.webp"
   },
@@ -57,7 +57,7 @@
    "price": "$8.00",
    "section": "Soups",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Roasted tomato, red pepper, onion, garlic, broth.",
    "order": "https://capeislandcafe.square.site/product/roasted-tomato-and-red-pepper/F2EKXSKULS6Z5NZ4KGHNSQVE",
    "img": "../img/menu/roasted-tomato-red-pepper.webp"
   },
@@ -66,7 +66,7 @@
    "price": "$15.00",
    "section": "Salads",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Chopped romaine & spinach, chicken, bacon, egg, tomato, cucumber, red onion, cheddar.",
    "order": "https://capeislandcafe.square.site/product/harbor-chop-salad/S4VC7ZIFHC3PBV65LW6CTXQB",
    "img": "../img/menu/harbor-chop.webp"
   },
@@ -75,7 +75,7 @@
    "price": "$11.00",
    "section": "Salads",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Romaine, fresh-grated Parmesan, croutons, Caesar dressing.",
    "order": "https://capeislandcafe.square.site/product/caesar-salad/2MNK5DWFUMJ4TBSZQSC65J2S",
    "img": "../img/menu/caesar-salad.webp"
   },
@@ -84,7 +84,7 @@
    "price": "$14.00",
    "section": "Salads",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Chicken, cashews, cranberries & red onion in mayo, over greens.",
    "order": "https://capeislandcafe.square.site/product/cashew-chicken-salad-plate/AERWYC5AUOPVNCUGY2F5AUYQ",
    "img": "../img/menu/cashew-chicken-salad-plate.webp"
   },
@@ -93,7 +93,7 @@
    "price": "$14.50",
    "section": "Salads",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Kale, cabbage, cranberries, cashews, feta, chicken.",
    "order": "https://capeislandcafe.square.site/product/kale-crunch/VCGZ4E73UPJJ62N4JJR3UPEZ",
    "img": "../img/menu/kale-crunch.webp"
   },
@@ -102,7 +102,7 @@
    "price": "$14.50",
    "section": "Salads",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Romaine, ham, egg, cucumber, cheddar, bacon, olives, pepperoncini.",
    "order": "https://capeislandcafe.square.site/product/island-chef-salad/JHAIEQIQJJOUHOLEKHQJRY2I",
    "img": "../img/menu/island-chef.webp"
   },
@@ -111,7 +111,7 @@
    "price": "$16.50",
    "section": "Bowls",
    "menu": "lunch",
-   "desc": "with avocado and greens",
+   "desc": "Salmon, rice, spinach, cucumber, avocado, red onion; house lime vinaigrette.",
    "order": "https://capeislandcafe.square.site/product/salmon-bowl/YHZ77NC6CI2FJ2SB5PWKBLJ4",
    "img": "../img/menu/salmon-bowl.webp"
   },
@@ -120,7 +120,7 @@
    "price": "$14.00",
    "section": "Bowls",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Chicken, black beans, corn, cheddar, tomato, red onion.",
    "order": "https://capeislandcafe.square.site/product/southwest-rice-bowl/XJBL3AQRLQSMVEQKWIMJE2QK",
    "img": "../img/menu/southwest-rice-bowl.webp"
   },
@@ -129,7 +129,7 @@
    "price": "$12.50",
    "section": "Bowls",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Cape Road Chili over rice, cheddar, red onion, tomato.",
    "order": "https://capeislandcafe.square.site/product/chili-bowl/B66EDYABBHQVD2QA7H3LC4ED",
    "img": "../img/menu/chili-bowl.webp"
   },
@@ -138,7 +138,7 @@
    "price": "$14.50",
    "section": "Wraps",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Chicken, bacon, black beans, cheddar, spinach, tomato.",
    "order": "https://capeislandcafe.square.site/product/chicken-bacon-black-bean-wrap/KT2TEAM2IGLR3VSM4QLTSCX5",
    "img": "../img/menu/chicken-bacon-black-bean-wrap.webp"
   },
@@ -147,7 +147,7 @@
    "price": "$14.00",
    "section": "Wraps",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Cashew chicken salad, spinach, tomato.",
    "order": "https://capeislandcafe.square.site/product/cashew-chicken-wrap/G7Q7HWP5GGIKVMGM2ENUBWIV",
    "img": "../img/menu/cashew-chicken-wrap.webp"
   },
@@ -156,7 +156,7 @@
    "price": "$14.00",
    "section": "Wraps",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Chicken, romaine, Parmesan, croutons, Caesar.",
    "order": "https://capeislandcafe.square.site/product/chicken-caesar-wrap/ECE2KWZPAI4XTNZUTE47W4P5",
    "img": "../img/menu/chicken-caesar-wrap.webp"
   },
@@ -165,7 +165,7 @@
    "price": "$14.00",
    "section": "Wraps",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Ham, cheddar, bacon, cabbage, tomato, pepperoncini.",
    "order": "https://capeislandcafe.square.site/product/ham-and-cheese-wrap/73SBUOLOYDQCZWKAB4JUBPR6",
    "img": "../img/menu/ham-cheese-wrap.webp"
   },
@@ -174,7 +174,7 @@
    "price": "$14.00",
    "section": "Wraps",
    "menu": "lunch",
-   "desc": "",
+   "desc": "Drained chili, cheddar, tomato, spinach; grilled & pressed.",
    "order": "https://capeislandcafe.square.site/product/chili-wrap/3CU5ZZYKNBCQZJUB7I2TTD4J",
    "img": "../img/menu/chili-wrap.webp"
   },
@@ -183,7 +183,7 @@
    "price": "$14.50",
    "section": "Wraps",
    "menu": "lunch",
-   "desc": "Bacon, romaine, tomato.",
+   "desc": "Bacon, romaine, tomato (spinach, wheat or white).",
    "order": "",
    "img": "img/menu/blt-wrap.webp"
   },
