@@ -115,11 +115,11 @@
       { id: 'contact', w: { contact: 2, phone: 2, call: 1.5, email: 2, reach: 1.5, number: 1.5, talk: 1, someone: 1 }, f: function () {
         return { html: 'Call <a href="' + B.tel + '">' + esc(B.phone) + '</a> or email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a>.', speak: 'Call 774 2 ISLAND, or email info at cape island cafe dot com.', actions: [CALL, MAIL] }; } },
       { id: 'menu', w: { menu: 2, food: 1.5, eat: 1.5, serve: 1.5, dish: 1, offer: 1, option: 0.5, selection: 1 }, p: { 'lunch menu': 2, 'what do you have': 1.5 }, f: function () {
-        var secs = ['Soups', 'Salads', 'Bowls', 'Wraps', 'Sides'];
+        var secs = ['Soups', 'Salads', 'Bowls', 'Wraps'];
         var h = 'Our lunch menu has:<ul class="ans-list sec">' + secs.map(function (s) {
           var arr = bySection(s); return '<li><span><b>' + s + '</b>: ' + arr.map(function (i) { return esc(i.name); }).join(', ') + '</span></li>'; }).join('') +
-          '</ul>Plus the <b>Build Your Own Lunch Plate</b> ($14.50), add-ons and beverages.';
-        return { html: h, speak: 'Our lunch menu has soups, salads, bowls and wraps, plus a build your own lunch plate for 14 50, add-ons and beverages.', actions: [a('See the full menu', P.menu, true), ORDER] }; } },
+          '</ul>Plus the <b>Build Your Own Lunch Plate</b> ($14.50), add-ons (including our <b>Baked Potato</b> $3.50 and <b>Loaded Baked Potato</b> $5.50) and beverages.';
+        return { html: h, speak: 'Our lunch menu has soups, salads, bowls and wraps, plus a build your own lunch plate for 14 50, add-ons including baked and loaded baked potatoes, and beverages.', actions: [a('See the full menu', P.menu, true), ORDER] }; } },
       { id: 'veg', w: { vegetarian: 3, vegan: 3, veggie: 2, plant: 1.5, meatless: 3, gluten: 2.5, dairy: 2, allergy: 2.5, allergie: 2.5, allergen: 2.5, celiac: 2.5, nut: 1.5, diet: 0.5 }, f: function () {
         return { html: 'Our menu doesn’t label vegetarian or allergen-free items, so please call <a href="' + B.tel + '">' + esc(B.phone) + '</a> to confirm. A few things from the menu that may help:' +
           '<ul class="ans-list sec"><li><span>The <b>Build Your Own Lunch Plate</b> ($14.50) lets you pick a base (salad over mixed greens, or a spinach, wheat or white wrap), up to 4 vegetables (romaine, spinach, kale, cucumber, tomato, avocado, red onion, black beans, corn, cheddar, pepperoncini, olives, cranberries, cabbage), a dressing and a side.</span></li>' +
@@ -137,7 +137,7 @@
       { id: 'salads', w: { salad: 2.5 }, f: function () { var x = bySection('Salads'); return { html: '<b>Salads</b>' + list(x), speak: 'Our salads: ' + speakList(x) + '.', actions: [ORDER] }; } },
       { id: 'bowls', w: { bowl: 2.5 }, f: function () { var x = bySection('Bowls'); return { html: '<b>Bowls</b>' + list(x) + '<small>Bowls are served over chicken-broth rice.</small>', speak: 'Our bowls: ' + speakList(x) + '.', actions: [ORDER] }; } },
       { id: 'wraps', w: { wrap: 2.5 }, f: function () { var x = bySection('Wraps'); return { html: '<b>Wraps</b>' + list(x), speak: 'Our wraps: ' + speakList(x) + '.', actions: [ORDER] }; } },
-      { id: 'sides', w: { side: 2.5, sides: 2.5 }, f: function () { var x = bySection('Sides'); return { html: '<b>Sides</b>' + list(x, true), speak: 'Our sides: ' + speakList(x) + '.', actions: [ORDER] }; } },
+      { id: 'sides', w: { side: 2.5, sides: 2.5, potato: 2.5, potatoes: 2.5 }, f: function () { var x = kb.items.filter(function (i) { return /potato/i.test(i.name) && i.section === 'Add-Ons'; }); return { html: 'Our potatoes are under <b>Add-Ons</b>' + list(x, true) + 'Lunch plates come with a side: Chips, Tortilla Chips, Potato Salad or Egg Salad.', speak: 'Our potatoes are under add-ons: ' + speakList(x) + '. Lunch plates come with chips, tortilla chips, potato salad or egg salad.', actions: [a('See the full menu', P.menu, true), ORDER] }; } },
       { id: 'addons', w: { addon: 2.5, add: 1.5, extra: 2, topping: 2 }, p: { 'add on': 2.5 }, f: function () { var x = bySection('Add-Ons'); return { html: '<b>Add-Ons</b>' + list(x), speak: 'Add-ons: ' + speakList(x) + '.', actions: [ORDER] }; } },
       { id: 'brunch', w: { brunch: 3, jone: 3, jones: 3, jonesn: 3, ticket: 2.5, event: 1.5, october: 2, oct: 2, '25': 1.5, '25th': 1.5, sunday: 1.2 }, f: function () {
         var cnt = kb.items.filter(function (i) { return i.menu === 'brunch'; }).length;

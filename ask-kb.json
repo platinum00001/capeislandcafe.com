@@ -198,7 +198,7 @@
   {
    "name": "Baked Potato",
    "price": "$3.50",
-   "section": "Sides",
+   "section": "Add-Ons",
    "menu": "lunch",
    "desc": "Plain baked potato.",
    "order": "",
@@ -207,7 +207,7 @@
   {
    "name": "Loaded Baked Potato",
    "price": "$5.50",
-   "section": "Sides",
+   "section": "Add-Ons",
    "menu": "lunch",
    "desc": "Cheddar, bacon & Cape Road Chili.",
    "order": "",
