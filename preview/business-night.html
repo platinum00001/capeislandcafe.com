@@ -5,11 +5,11 @@
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>[Preview] Local Celebration Night | Cape Island Café, Falmouth, MA</title>
-<meta name="description" content="Local businesses: reserve a night at Cape Island Café in Falmouth, MA. 5–7 PM, food samples ($20 suggested donation per person), 10% of proceeds to your charity, your business on our screen, and your employees and customers welcome. Reserve your date today.">
+<meta name="description" content="Businesses, nonprofits, first responders, agencies and local teams: reserve a celebration night at Cape Island Café in Falmouth, MA. 5–7 PM, food samples ($20 suggested donation per person), 10% of proceeds to your charity. Reserve with a $100 charity donation (receipt emailed) or send a free request.">
 <meta name="theme-color" content="#1b1e23">
 <link rel="canonical" href="https://capeislandcafe.com/business-night.html">
 <meta property="og:title" content="Local Business Celebration Night | Cape Island Café, Falmouth, MA">
-<meta property="og:description" content="Local businesses: reserve a night at Cape Island Café in Falmouth, MA. 5–7 PM, food samples ($20 suggested donation per person), 10% of proceeds to your charity, your business on our screen, and your employees and customers welcome. Reserve your date today.">
+<meta property="og:description" content="Businesses, nonprofits, first responders, agencies and local teams: reserve a celebration night at Cape Island Café in Falmouth, MA. 5–7 PM, food samples ($20 suggested donation per person), 10% of proceeds to your charity. Reserve with a $100 charity donation (receipt emailed) or send a free request.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://capeislandcafe.com/business-night.html">
 <meta property="og:site_name" content="Cape Island Café">
@@ -20,7 +20,7 @@
 <meta property="og:image:alt" content="Local Business Celebration Night at Cape Island Café">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Local Business Celebration Night | Cape Island Café, Falmouth, MA">
-<meta name="twitter:description" content="Local businesses: reserve a night at Cape Island Café in Falmouth, MA. 5–7 PM, food samples ($20 suggested donation per person), 10% of proceeds to your charity, your business on our screen, and your employees and customers welcome. Reserve your date today.">
+<meta name="twitter:description" content="Businesses, nonprofits, first responders, agencies and local teams: reserve a celebration night at Cape Island Café in Falmouth, MA. 5–7 PM, food samples ($20 suggested donation per person), 10% of proceeds to your charity. Reserve with a $100 charity donation (receipt emailed) or send a free request.">
 <meta name="twitter:image" content="https://capeislandcafe.com/img/og/charity-events.jpg">
 <meta name="twitter:image:alt" content="Local Business Celebration Night at Cape Island Café">
 <link rel="icon" href="../favicon.ico" sizes="any">
@@ -116,8 +116,17 @@
       <div class="soon-card">
         <span class="badge">Reserve your date today</span>
         <h2>Reserve your date</h2>
-        <p>Businesses, nonprofits, first responders, agencies and teams all welcome. Pick a date, tell us what you’re celebrating, and we’ll reply to confirm your night.</p>
+        <p>Businesses, nonprofits, first responders, agencies and teams all welcome. Choose how you’d like to reserve, pick a date, and tell us what you’re celebrating. We’ll reply to confirm your night.</p>
+        <div class="bn-grid" style="margin:18px 0">
+          <div class="bn-item"><h3>Donate $100 &amp; reserve</h3><p>Lock in your night with a $100 donation that goes to the charity. Pay securely through Square, then submit the form below so we have your date.</p><p><a class="btn btn-order" id="bn-pay" href="SQUARE_100_DONATION_URL_PLACEHOLDER" target="_blank" rel="noopener">Donate $100 &amp; reserve<span class="sr-only"> (opens Square in a new tab)</span></a></p><p class="bn-note">$100 goes to the charity. We’ll email your deductible donation receipt.</p></div>
+          <div class="bn-item"><h3>Free request</h3><p>Not ready to donate? No problem. Fill out the form below and send a free request. We’ll get back to you to find the right date.</p><p><a class="btn btn-navy" href="#bn-form" id="bn-free">Free request</a></p></div>
+        </div>
+        <p class="bn-note">Tax deductibility depends on the charity and your own situation. We email the donation receipt/forms the charity provides so you can keep them for your records.</p>
         <form class="bn-form" id="bn-form" action="mailto:CapeIslandCafe@gmail.com" method="post" enctype="text/plain">
+          <fieldset style="border:0;padding:0;margin:0 0 12px"><legend style="font-weight:600">How are you reserving? *</legend>
+            <label><input type="radio" name="path" value="donation" id="bn-path-don"> I donated $100 through Square (charity donation)</label><br>
+            <label><input type="radio" name="path" value="free" id="bn-path-free" checked> Free request</label>
+          </fieldset>
           <div class="row">
             <div><label for="bn-biz">Business / organization / team name *</label><input id="bn-biz" name="business" required autocomplete="organization"></div>
             <div><label for="bn-name">Contact name *</label><input id="bn-name" name="name" required autocomplete="name"></div>
@@ -130,11 +139,11 @@
             <div><label for="bn-date1">Preferred date *</label><input id="bn-date1" name="date1" type="date" required></div>
             <div><label for="bn-date2">Backup date</label><input id="bn-date2" name="date2" type="date"></div>
           </div>
-          <label for="bn-charity">Charity of your choice (optional)</label>
-          <input id="bn-charity" name="charity" placeholder="Who should receive 10% of the night’s proceeds?">
+          <label for="bn-charity">Charity of your choice *</label>
+          <input id="bn-charity" name="charity" required placeholder="Who receives your donation and 10% of the night’s proceeds?">
           <label for="bn-notes">Tell us about your business / notes</label>
           <textarea id="bn-notes" name="notes" placeholder="What are we celebrating? Expected guests, anything you’d like on the screen…"></textarea>
-          <button class="btn btn-order btn-lg" type="submit">Reserve your date</button>
+          <button class="btn btn-order btn-lg" type="submit" id="bn-submit">Send free request</button>
           <p class="bn-note">Submitting opens your email app with your request addressed to CapeIslandCafe@gmail.com. Just hit send.</p>
         </form>
         <p style="margin-top:20px">Prefer to reach us directly?</p>
@@ -150,10 +159,16 @@
   document.getElementById('bn-form').addEventListener('submit',function(e){
     e.preventDefault();var f=this;if(!f.reportValidity())return;
     var v=function(n){return (f.elements[n].value||'').trim()};
-    var subj='Local Business Celebration Night - Reserve '+v('date1')+' - '+v('business');
-    var body='Business: '+v('business')+'\nContact: '+v('name')+'\nEmail: '+v('email')+'\nPhone: '+v('phone')+'\nPreferred date: '+v('date1')+'\nBackup date: '+v('date2')+'\nCharity: '+v('charity')+'\nTime: 5:00-7:00 PM\n\nNotes:\n'+v('notes');
+    var don=document.getElementById('bn-path-don').checked;
+    var subj='Celebration Night - '+(don?'$100 Donation Reserve':'Free Request')+' - '+v('date1')+' - '+v('business');
+    var body='Path: '+(don?'$100 charity donation via Square (please email deductible receipt)':'Free request')+'\nBusiness: '+v('business')+'\nContact: '+v('name')+'\nEmail: '+v('email')+'\nPhone: '+v('phone')+'\nPreferred date: '+v('date1')+'\nBackup date: '+v('date2')+'\nCharity: '+v('charity')+'\nTime: 5:00-7:00 PM\n\nNotes:\n'+v('notes');
     location.href='mailto:CapeIslandCafe@gmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
   });
+  function bnSet(d){document.getElementById(d?'bn-path-don':'bn-path-free').checked=true;document.getElementById('bn-submit').textContent=d?'Submit $100 donation reservation':'Send free request';}
+  document.getElementById('bn-path-don').addEventListener('change',function(){bnSet(true)});
+  document.getElementById('bn-path-free').addEventListener('change',function(){bnSet(false)});
+  document.getElementById('bn-pay').addEventListener('click',function(){bnSet(true);setTimeout(function(){document.getElementById('bn-form').scrollIntoView({behavior:'smooth'})},300)});
+  document.getElementById('bn-free').addEventListener('click',function(){bnSet(false)});
   </script>
 </main>
 <footer class="site-footer">
