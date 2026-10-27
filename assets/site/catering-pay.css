@@ -22,3 +22,14 @@
 .cp-msg{margin-top:12px;background:#fff8dc;border:1px solid #f1d98a;border-radius:12px;padding:12px 14px}
 .cp-soon{margin-top:18px;background:#f4f1e8;border:1px solid #e3e0d6;border-radius:12px;padding:14px 16px;font-weight:600}
 .cp-note{font-size:.9rem;color:#5b5f66;margin-top:12px}
+/* Catering order form */
+.co-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.co-items{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:8px}
+.co-item{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid #e3e0d6;border-radius:12px;padding:8px 12px;background:#fdfcf8}
+.cp-form .co-item label{margin:0;display:flex;align-items:center;gap:8px;flex:1}
+.cp-form .co-item input[type=checkbox]{width:22px;height:22px;min-height:0;accent-color:#0b1a3b;flex:0 0 auto}
+.cp-form .co-item input[type=number]{width:84px;flex:0 0 auto;text-align:center}
+.co-item:has(input[type=checkbox]:checked){border-color:var(--sun,#fdcb2e);background:#fff8dc}
+.co-thanks{max-width:720px;margin:0 auto 18px;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:12px;padding:14px 16px}
+.co-thanks[hidden]{display:none}
+.cp-form .btn[type=submit]{margin-top:18px}

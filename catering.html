@@ -80,7 +80,7 @@
       <span class="eyebrow">Gatherings</span>
       <h1>Catering &amp; Private Events</h1>
       <p class="lead">Host your next gathering with us. Private events in our café Monday through Thursday, for up to 50 guests, starting at $25 per person. We also cater on-site for offices, parties and celebrations.</p>
-      <div class="ctas"><a class="btn btn-order btn-lg" href="mailto:CapeIslandCafe@gmail.com?subject=Private%20event%20/%20catering%20inquiry&amp;body=Hi%20Cape%20Island%20Caf%C3%A9%2C%0A%0AI%27d%20like%20to%20plan%20an%20event.%0A%0ADate%3A%0AGuest%20count%3A%0AIn%20your%20caf%C3%A9%20%28in-house%29%20or%20on-site%20catering%3A%0AAnything%20else%20we%20should%20know%3A%0A%0AThanks%21"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Plan Your Event</a><a class="btn btn-outline" href="tel:+17742475263"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call 774-247-5263</a><a class="btn btn-outline" href="#pay">Pay for Catering</a></div>
+      <div class="ctas"><a class="btn btn-order btn-lg" href="mailto:CapeIslandCafe@gmail.com?subject=Private%20event%20/%20catering%20inquiry&amp;body=Hi%20Cape%20Island%20Caf%C3%A9%2C%0A%0AI%27d%20like%20to%20plan%20an%20event.%0A%0ADate%3A%0AGuest%20count%3A%0AIn%20your%20caf%C3%A9%20%28in-house%29%20or%20on-site%20catering%3A%0AAnything%20else%20we%20should%20know%3A%0A%0AThanks%21"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Plan Your Event</a><a class="btn btn-outline" href="tel:+17742475263"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call 774-247-5263</a><a class="btn btn-outline" href="#order">Order Catering</a><a class="btn btn-outline" href="#pay">Pay for Catering</a></div>
     </div>
   </section>
 
@@ -123,6 +123,52 @@
     <div class="wrap">
       <div class="sec-head"><span class="kicker">Catering orders</span><h2>Platters for your event</h2><div class="rule"><i></i></div></div>
       <p style="max-width:760px;margin:0 auto;text-align:center">Ordering for a meeting, party or celebration? We make catering trays by the dozen: mini croissants, mini quiches, mini danishes, muffins, scones and more. Email <a href="mailto:CapeIslandCafe@gmail.com?subject=Catering%20order">CapeIslandCafe@gmail.com</a> with your date, headcount and what you’d like, and we’ll send you an invoice.</p>
+    </div>
+  </section>
+
+  <section class="upd" id="order" aria-labelledby="order-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="kicker">Order online</span><h2 id="order-title">Place a Catering Order</h2><div class="rule"><i></i></div></div>
+      <div class="co-thanks" id="thanks" tabindex="-1" hidden role="status"><strong>Thanks! We'll confirm your order.</strong> You can pay your deposit below. <a href="#pay">Pay your deposit →</a></div>
+      <form class="cp-form" id="co-form" action="https://formsubmit.co/capeislandcafe@gmail.com" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New catering order">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" id="co-next" value="https://capeislandcafe.com/catering.html?ordered=1#thanks">
+        <div class="co-hp" aria-hidden="true"><label for="co-honey">Leave this empty</label><input type="text" name="_honey" id="co-honey" tabindex="-1" autocomplete="off"></div>
+        <div class="row">
+          <div><label for="co-name">Name *</label><input id="co-name" name="name" required autocomplete="name"></div>
+          <div><label for="co-email">Email *</label><input id="co-email" name="email" type="email" required autocomplete="email"></div>
+        </div>
+        <div class="row">
+          <div><label for="co-phone">Phone *</label><input id="co-phone" name="phone" type="tel" required autocomplete="tel"></div>
+          <div><label for="co-guests">Number of guests <span class="cp-hint">(optional)</span></label><input id="co-guests" name="guests" type="number" min="1" inputmode="numeric"></div>
+        </div>
+        <div class="row">
+          <div><label for="co-date">Pickup date *</label><input id="co-date" name="pickup_date" type="date" required></div>
+          <div><label for="co-time">Pickup time <span class="cp-hint">(optional)</span></label><input id="co-time" name="pickup_time" type="time"></div>
+        </div>
+        <fieldset>
+          <legend>What would you like?</legend>
+          <p class="cp-hint">Check the items you want and set how many (we start you at 50).</p>
+          <div class="co-items" id="co-items"></div>
+        </fieldset>
+        <label for="co-other">Other / special request</label>
+        <textarea id="co-other" name="other_request" placeholder="Anything else? Allergies, dietary needs, something not listed…"></textarea>
+        <label for="co-amount">Order amount *</label>
+        <div class="cp-money"><span aria-hidden="true">$</span><input id="co-amount" name="order_amount" type="text" inputmode="decimal" required aria-required="true" aria-describedby="co-amount-hint co-err" placeholder="0.00" autocomplete="off"></div>
+        <p class="cp-hint" id="co-amount-hint">Use the quote we gave you, or your budget and we'll confirm.</p>
+        <div class="cp-sum" aria-live="polite">
+          <div><span>Order amount</span><span id="co-s-amt">$0.00</span></div>
+          <div class="tot"><span>Deposit due (50%)</span><span id="co-s-dep">$0.00</span></div>
+          <div><span>Balance at pickup</span><span id="co-s-bal">$0.00</span></div>
+        </div>
+        <input type="hidden" name="deposit_50" id="co-dep-field">
+        <input type="hidden" name="balance_at_pickup" id="co-bal-field">
+        <input type="hidden" name="items" id="co-items-field">
+        <p class="cp-err" id="co-err" role="alert"></p>
+        <button class="btn btn-order btn-lg" type="submit" id="co-submit">Send catering order</button>
+        <p class="cp-note">Your order goes straight to CapeIslandCafe@gmail.com. We'll confirm the menu and final price before anything is charged. Email not working? <a href="#" id="co-mailto">Send your order by email instead</a>.</p>
+      </form>
     </div>
   </section>
 
@@ -219,6 +265,7 @@
   </div>
 </footer>
 <script src="assets/catering-config.js"></script>
+<script src="assets/site/catering-order.js"></script>
 <script src="assets/site/catering-pay.js"></script>
 <script src="nav.js"></script>
 </body>
