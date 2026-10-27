@@ -1,0 +1,24 @@
+/* Catering payment calculator */
+.cp-form{background:#fff;border:1px solid #e3e0d6;border-radius:16px;padding:24px;max-width:720px;margin:0 auto;text-align:left}
+.cp-form .row{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.cp-form label,.cp-form legend{display:block;font-weight:600;margin:12px 0 4px;color:#1b2a4a}
+.cp-form input,.cp-form textarea{width:100%;box-sizing:border-box;padding:11px 12px;border:1px solid #c9c4b5;border-radius:10px;font:inherit;min-height:44px}
+.cp-form textarea{min-height:70px}
+.cp-form fieldset{border:0;padding:0;margin:0}
+.cp-money{position:relative}
+.cp-money span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#555;font-weight:600}
+.cp-money input{padding-left:26px}
+.cp-hint{font-size:.9rem;color:#5b5f66;margin-top:4px}
+.cp-tips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.cp-tips label{margin:0;display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border:1px solid #c9c4b5;border-radius:999px;cursor:pointer;min-height:44px;box-sizing:border-box;font-weight:600}
+.cp-tips input{width:auto;min-height:0;margin:0;accent-color:#0b1a3b}
+.cp-tips label:has(input:checked){background:var(--sun,#fdcb2e);border-color:var(--sun,#fdcb2e);color:#1b1e23}
+.cp-custom[hidden]{display:none}
+.cp-sum{margin:20px 0 0;border-top:1px solid #e3e0d6;padding-top:14px;font-variant-numeric:tabular-nums}
+.cp-sum div{display:flex;justify-content:space-between;padding:4px 0}
+.cp-sum .tot{font-size:1.25rem;font-weight:800;color:var(--navy,#0b1a3b);border-top:2px solid var(--navy,#0b1a3b);margin-top:6px;padding-top:10px}
+.cp-err{color:#a4161a;font-weight:600;margin-top:6px}
+.cp-pay .btn{margin-top:18px}
+.cp-msg{margin-top:12px;background:#fff8dc;border:1px solid #f1d98a;border-radius:12px;padding:12px 14px}
+.cp-soon{margin-top:18px;background:#f4f1e8;border:1px solid #e3e0d6;border-radius:12px;padding:14px 16px;font-weight:600}
+.cp-note{font-size:.9rem;color:#5b5f66;margin-top:12px}
