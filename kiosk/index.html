@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1b1e23">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Order Here | Cape Island Café</title>
+<link rel="icon" href="../favicon.ico">
+<link rel="preconnect" href="https://capeislandcafe.square.site">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@500;600;700&family=Libre+Baskerville:ital,wght@1,400&display=swap">
+<style>
+:root{--charcoal:#1b1e23;--charcoal-2:#24282e;--navy:#0b1a3b;--gold:#bd8322;--sun:#fdcb2e;--sun-2:#ffd95a;--cream:#fbf8f1;--ink:#1d2433;
+--serif:"Libre Baskerville",Georgia,serif;--sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--cond:"Barlow Condensed","Barlow",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:var(--cream);font-family:var(--sans);color:var(--ink);-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;overscroll-behavior:none;touch-action:manipulation}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.app{display:flex;flex-direction:column;height:100vh;height:100dvh}
+.bar{flex:0 0 auto;background:var(--charcoal);border-bottom:3px solid var(--sun);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;padding:12px 20px;padding-top:max(12px,env(safe-area-inset-top))}
+.brand{display:flex;align-items:center;gap:12px;color:#fff}
+.brand img{height:62px;width:auto}
+.brand span{display:flex;flex-direction:column;line-height:1}
+.brand b{font-weight:700;letter-spacing:.12em;font-size:1.05rem;text-transform:uppercase}
+.brand i{font-family:var(--serif);color:var(--sun);font-size:1rem;margin-top:6px}
+.toggle{justify-self:center;display:grid;grid-template-columns:1fr 1fr;background:var(--charcoal-2);border:2px solid rgba(253,203,46,.35);border-radius:999px;padding:6px;width:min(560px,100%)}
+.toggle button{font-family:var(--cond);font-weight:700;font-size:1.75rem;letter-spacing:.06em;text-transform:uppercase;color:#f1ede4;border-radius:999px;padding:14px 18px;min-height:72px;display:flex;align-items:center;justify-content:center;gap:10px;transition:background .15s,color .15s}
+.toggle button svg{width:30px;height:30px;flex:0 0 auto}
+.toggle button[aria-pressed="true"]{background:var(--sun);color:var(--charcoal);box-shadow:0 8px 22px rgba(253,203,46,.35)}
+.toggle button:active{transform:scale(.98)}
+.restart{font-family:var(--cond);font-weight:700;font-size:1.2rem;letter-spacing:.06em;text-transform:uppercase;color:#f1ede4;border:2px solid rgba(255,255,255,.4);border-radius:999px;padding:14px 22px;min-height:64px;display:flex;align-items:center;gap:8px}
+.restart svg{width:24px;height:24px}
+.restart:active{background:rgba(255,255,255,.1)}
+.strip{flex:0 0 auto;background:var(--navy);color:#fff;text-align:center;font-family:var(--cond);font-weight:600;font-size:1.3rem;letter-spacing:.05em;padding:9px 16px}
+.strip b{color:var(--sun)}
+.stage{position:relative;flex:1 1 auto;min-height:0;background:#fff}
+.stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:var(--cream);font-family:var(--cond);font-weight:700;font-size:1.6rem;letter-spacing:.05em;text-transform:uppercase;color:var(--navy);transition:opacity .25s}
+.loading.hide{opacity:0;pointer-events:none}
+.spin{width:64px;height:64px;border-radius:50%;border:7px solid #ecdcb4;border-top-color:var(--gold);animation:s 1s linear infinite}
+@keyframes s{to{transform:rotate(360deg)}}
+.idle{position:fixed;inset:0;z-index:20;background:rgba(11,26,59,.82);display:none;align-items:center;justify-content:center;padding:24px}
+.idle.show{display:flex}
+.card{background:var(--cream);border-radius:28px;padding:40px 36px;max-width:560px;width:100%;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.card h2{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--navy);font-size:2.1rem;margin-bottom:10px}
+.card p{font-size:1.25rem;color:#5a6272;margin-bottom:26px}
+.card p b{color:var(--ink)}
+.card .go{display:block;width:100%;font-family:var(--cond);font-weight:700;font-size:1.8rem;letter-spacing:.06em;text-transform:uppercase;background:var(--sun);color:var(--charcoal);border-radius:999px;padding:22px;box-shadow:0 10px 26px rgba(253,203,46,.4)}
+.card .no{margin-top:14px;font-family:var(--cond);font-weight:700;font-size:1.3rem;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);padding:14px 24px}
+@media (orientation:portrait),(max-width:900px){
+ .bar{grid-template-columns:1fr auto;gap:12px 14px;padding:12px 16px}
+ .toggle{grid-column:1/-1;grid-row:2;width:100%}
+ .brand img{height:54px}
+}
+@media (max-height:520px){.toggle button{min-height:58px;font-size:1.45rem}.brand img{height:48px}.strip{font-size:1.1rem;padding:6px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <div class="brand" aria-label="Cape Island Café">
+      <img src="../img/emblem-dark.webp" alt="" width="160" height="188">
+      <span><b>Cape Island Café</b><i>Order here</i></span>
+    </div>
+    <div class="toggle" role="group" aria-label="Choose a menu">
+      <button type="button" data-menu="breakfast" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M17 18a5 5 0 0 0-10 0"/><path d="M12 2v7M4.2 10.2l1.4 1.4M1 18h2M21 18h2M18.4 11.6l1.4-1.4M23 22H1M8 6l4-4 4 4"/></svg>Breakfast</button>
+      <button type="button" data-menu="lunch" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Lunch</button>
+    </div>
+    <button type="button" class="restart" id="restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Start over</button>
+  </header>
+  <div class="strip" id="strip"></div>
+  <main class="stage">
+    <iframe id="menu" title="Cape Island Café menu" allow="payment" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="loading" id="loading"><div class="spin"></div><span id="loadingText">Loading menu…</span></div>
+  </main>
+</div>
+
+<div class="idle" id="idle" role="dialog" aria-modal="true" aria-labelledby="idleTitle">
+  <div class="card">
+    <h2 id="idleTitle">Still ordering?</h2>
+    <p>We’ll start over for the next guest in <b id="count">20</b> seconds.</p>
+    <button type="button" class="go" id="keep">Keep ordering</button>
+    <button type="button" class="no" id="startOver">Start over</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Square Online menu sections (Square category IDs) for location L7Q6A8V9Q0T18.
+  var BASE = "https://capeislandcafe.square.site/s/order?location=L7Q6A8V9Q0T18";
+  var MENUS = {
+    breakfast: { url: BASE + "&kiosk=breakfast#EBVJDMWTVOJHAWCGQP67RZM2", label: "Breakfast", note: "<b>Breakfast</b> &middot; Mon–Fri 8–10 AM &middot; Tap an item to add it to your order" },
+    lunch:     { url: BASE + "&kiosk=lunch#D4S5QPTN2AB4NSFIC3L2A2ZJ",     label: "Lunch",     note: "<b>Lunch</b> &middot; Mon–Fri until 3 PM &middot; Soups, salads, bowls, wraps &amp; Refreshers" }
+  };
+  var IDLE_MS = 90000, WARN_S = 20;
+
+  var frame = document.getElementById("menu"), loading = document.getElementById("loading"),
+      loadingText = document.getElementById("loadingText"), strip = document.getElementById("strip"),
+      idle = document.getElementById("idle"), count = document.getElementById("count"),
+      btns = document.querySelectorAll(".toggle button"), current = null, idleTimer = null, warnTimer = null;
+
+  // Default: Breakfast. During lunch hours (10 AM–3 PM Mon–Fri, café time) open on Lunch instead.
+  function defaultMenu(){
+    try{
+      var parts = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",weekday:"short",hour:"numeric",hourCycle:"h23"}).formatToParts(new Date());
+      var wd = "", hr = 0;
+      parts.forEach(function(p){ if(p.type==="weekday") wd=p.value; if(p.type==="hour") hr=parseInt(p.value,10); });
+      if (["Mon","Tue","Wed","Thu","Fri"].indexOf(wd) > -1 && hr >= 10 && hr < 15) return "lunch";
+    }catch(e){}
+    return "breakfast";
+  }
+
+  function show(menu, force){
+    if (menu === current && !force) return;
+    current = menu;
+    btns.forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.menu === menu ? "true" : "false"); });
+    strip.innerHTML = MENUS[menu].note;
+    loadingText.textContent = "Loading " + MENUS[menu].label + " menu…";
+    loading.classList.remove("hide");
+    frame.src = MENUS[menu].url;
+    // Never leave the spinner up forever if the load event is slow.
+    clearTimeout(show._t); show._t = setTimeout(function(){ loading.classList.add("hide"); }, 12000);
+  }
+  frame.addEventListener("load", function(){ setTimeout(function(){ loading.classList.add("hide"); }, 400); activity(); });
+
+  function reset(){
+    hideIdle();
+    current = null;
+    frame.src = "about:blank";
+    setTimeout(function(){ show(defaultMenu(), true); }, 50);
+    window.focus();
+  }
+
+  function hideIdle(){ idle.classList.remove("show"); clearInterval(warnTimer); }
+  function warn(){
+    var n = WARN_S; count.textContent = n; idle.classList.add("show");
+    clearInterval(warnTimer);
+    warnTimer = setInterval(function(){ n--; count.textContent = n; if (n <= 0) reset(); }, 1000);
+  }
+  function activity(){
+    if (idle.classList.contains("show")) return;
+    clearTimeout(idleTimer); idleTimer = setTimeout(warn, IDLE_MS);
+  }
+
+  btns.forEach(function(b){ b.addEventListener("click", function(){ show(b.dataset.menu); }); });
+  document.getElementById("restart").addEventListener("click", reset);
+  document.getElementById("startOver").addEventListener("click", reset);
+  document.getElementById("keep").addEventListener("click", function(){ hideIdle(); window.focus(); activity(); });
+
+  ["pointerdown","touchstart","keydown","wheel"].forEach(function(ev){ document.addEventListener(ev, activity, {passive:true}); });
+  // Taps inside the Square menu can't be seen directly (cross-origin), but the first tap moves focus into it.
+  window.addEventListener("blur", function(){ setTimeout(function(){ if (document.activeElement === frame) activity(); }, 0); });
+  document.addEventListener("contextmenu", function(e){ e.preventDefault(); });
+  document.addEventListener("visibilitychange", function(){ if (!document.hidden) activity(); });
+
+  show(defaultMenu(), true);
+  activity();
+})();
+</script>
+</body>
+</html>
