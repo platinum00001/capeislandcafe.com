@@ -51,7 +51,8 @@
     });
 
     function a(label, href, primary, ext) { return { label: label, href: href, primary: !!primary, ext: !!ext }; }
-    var ORDER = a('Order Now', B.order, true, true);
+    var ORDER = a('Book an event', P.events, true);
+    var CATER = a('Catering', P.catering, true);
     var CALL = a('Call ' + B.phone, B.tel);
     var MAIL = a('Email us', 'mailto:' + B.email);
     function fallback() {
@@ -85,31 +86,31 @@
         } else if (!it.desc && it.section !== 'Add-Ons' && it.section !== 'Beverages') {
           h += '<br><small>For ingredient details, please call ' + esc(B.phone) + '.</small>';
         }
-        acts.push(it.order ? a('Order ' + it.name, it.order, true, true) : ORDER);
+        acts.push(CATER, CALL);
       }
       return { html: h, speak: s, actions: acts, intent: 'item', item: it.name, img: it.img || '' };
     }
     function itemsAnswer(arr) {
       var brunch = arr.every(function (i) { return i.menu === 'brunch'; });
       return { html: 'Here’s what I found:' + list(arr, true) + (brunch ? '<small>' + esc(E.note) + '</small>' : ''),
-        speak: 'Here is what I found: ' + speakList(arr) + '.', actions: brunch ? [a('View the brunch menu', E.page, true)] : [ORDER, a('See the lunch menu', P.menu)],
+        speak: 'Here is what I found: ' + speakList(arr) + '.', actions: brunch ? [a('View the brunch menu', E.page, true)] : [CATER, a('See the menu', P.menu)],
         intent: 'items', items: arr.map(function (i) { return i.name; }) };
     }
 
     var INTENTS = [
       { id: 'greet', w: { hi: 1.5, hello: 1.5, hey: 1.5, morning: 1, afternoon: 1 }, f: function () {
-        return { html: 'Hi! I can help with our lunch menu, prices, hours, ordering, and the Jones’n Sunday Brunch. What would you like to know?', speak: 'Hi! I can help with our lunch menu, prices, hours, ordering, and the Sunday brunch. What would you like to know?', actions: [] }; } },
+        return { html: 'Hi! I can help with special events, private catering, our menu, prices, and hours. What would you like to know?', speak: 'Hi! I can help with special events, private catering, our menu, prices, and hours. What would you like to know?', actions: [] }; } },
       { id: 'thanks', w: { thank: 2, thanks: 2, thx: 2, appreciate: 2 }, f: function () {
         return { html: 'You’re welcome! Anything else I can help with?', speak: 'You’re welcome! Anything else I can help with?', actions: [ORDER] }; } },
       { id: 'hours', w: { hour: 2, open: 2, opening: 2, close: 2, closing: 2, closed: 1.5, when: 0.8, time: 1, today: 1, tomorrow: 1, weekend: 1, monday: 1, tuesday: 1, wednesday: 1, thursday: 1, friday: 1, saturday: 1, sunday: 0.6 },
         p: { 'what time': 2, 'are you open': 2 }, f: function (q) {
         var x = /sunday|weekend|saturday/.test(q) ? '<br>Our first Sunday event is <b>' + esc(E.name) + '</b>, ' + esc(E.date) + '.' : '';
-        return { html: '<b>' + esc(B.hours) + '</b><br>' + esc(B.soft) + x, speak: 'Lunch is served Monday through Friday, 11 AM to 3 PM. ' + B.soft, actions: [ORDER, CALL] }; } },
+        return { html: '<b>' + esc(B.hours) + '</b><br>Open for special events and private catering by appointment. Call <a href="' + B.tel + '">' + esc(B.phone) + '</a>.' + x, speak: 'Open for special events and private catering by appointment. Call 774-2-ISLAND.', actions: [ORDER, CATER, CALL] }; } },
       { id: 'order', w: { order: 2, ordering: 2, online: 1.5, pickup: 1.5, takeout: 2, togo: 1.5, square: 1, buy: 1.5, purchase: 1.5, delivery: 2, deliver: 2, ahead: 1 },
         p: { 'to go': 2, 'call ahead': 2, 'pick up': 2 }, f: function (q) {
         var dl = /deliver/.test(q) ? ' I don’t have delivery details, so please call to ask.' : '';
-        return { html: 'You can order online with the <b>Order Now</b> button, or call ahead at <a href="' + B.tel + '">' + esc(B.phone) + '</a>. ' + esc(B.togo) + dl,
-          speak: 'You can order online with the Order Now button, or call ahead at 774 2 ISLAND. Lunch is to go or stay.', actions: [ORDER, CALL] }; } },
+        return { html: 'We’re open for special events and private catering by appointment. Call <a href="' + B.tel + '">' + esc(B.phone) + '</a> to book, or see our catering and special events pages.' + dl,
+          speak: 'We are open for special events and private catering by appointment. Call 774 2 ISLAND to book.', actions: [ORDER, CATER, CALL] }; } },
       { id: 'location', w: { where: 1.5, address: 2, located: 2, location: 2, direction: 2, map: 1.5, find: 1, gifford: 2, falmouth: 1.5, street: 1 }, f: function () {
         return { html: 'We’re at <b>' + esc(B.address) + '</b>, on Cape Cod.', speak: 'We are at 316 Gifford Street, Falmouth, Massachusetts.', actions: [a('Map & directions', B.directions, true, true)] }; } },
       { id: 'contact', w: { contact: 2, phone: 2, call: 1.5, email: 2, reach: 1.5, number: 1.5, talk: 1, someone: 1 }, f: function () {
@@ -119,7 +120,7 @@
         var h = 'Our lunch menu has:<ul class="ans-list sec">' + secs.map(function (s) {
           var arr = bySection(s); return '<li><span><b>' + s + '</b>: ' + arr.map(function (i) { return esc(i.name); }).join(', ') + '</span></li>'; }).join('') +
           '</ul>Plus the <b>Build Your Own Lunch Plate</b> ($14.50), add-ons (including our <b>Baked Potato</b> $3.50 and <b>Loaded Baked Potato</b> $5.50) and beverages.';
-        return { html: h, speak: 'Our lunch menu has soups, salads, bowls and wraps, plus a build your own lunch plate for 14 50, add-ons including baked and loaded baked potatoes, and beverages.', actions: [a('See the full menu', P.menu, true), ORDER] }; } },
+        return { html: h, speak: 'Our lunch menu has soups, salads, bowls and wraps, plus a build your own lunch plate for 14 50, add-ons including baked and loaded baked potatoes, and beverages.', actions: [a('See the full menu', P.menu, true), CATER] }; } },
       { id: 'veg', w: { vegetarian: 3, vegan: 3, veggie: 2, plant: 1.5, meatless: 3, gluten: 2.5, dairy: 2, allergy: 2.5, allergie: 2.5, allergen: 2.5, celiac: 2.5, nut: 1.5, diet: 0.5 }, f: function () {
         return { html: 'Our menu doesn’t label vegetarian or allergen-free items, so please call <a href="' + B.tel + '">' + esc(B.phone) + '</a> to confirm. A few things from the menu that may help:' +
           '<ul class="ans-list sec"><li><span>The <b>Build Your Own Lunch Plate</b> ($14.50) lets you pick a base (salad over mixed greens, or a spinach, wheat or white wrap), up to 4 vegetables (romaine, spinach, kale, cucumber, tomato, avocado, red onion, black beans, corn, cheddar, pepperoncini, olives, cranberries, cabbage), a dressing and a side.</span></li>' +
@@ -137,7 +138,7 @@
       { id: 'salads', w: { salad: 2.5 }, f: function () { var x = bySection('Salads'); return { html: '<b>Salads</b>' + list(x), speak: 'Our salads: ' + speakList(x) + '.', actions: [ORDER] }; } },
       { id: 'bowls', w: { bowl: 2.5 }, f: function () { var x = bySection('Bowls'); return { html: '<b>Bowls</b>' + list(x) + '<small>Bowls are served over chicken-broth rice.</small>', speak: 'Our bowls: ' + speakList(x) + '.', actions: [ORDER] }; } },
       { id: 'wraps', w: { wrap: 2.5 }, f: function () { var x = bySection('Wraps'); return { html: '<b>Wraps</b>' + list(x), speak: 'Our wraps: ' + speakList(x) + '.', actions: [ORDER] }; } },
-      { id: 'sides', w: { side: 2.5, sides: 2.5, potato: 2.5, potatoes: 2.5 }, f: function () { var x = kb.items.filter(function (i) { return /potato/i.test(i.name) && i.section === 'Add-Ons'; }); return { html: 'Our potatoes are under <b>Add-Ons</b>' + list(x, true) + 'Lunch plates come with a side: Chips, Tortilla Chips, Potato Salad or Egg Salad.', speak: 'Our potatoes are under add-ons: ' + speakList(x) + '. Lunch plates come with chips, tortilla chips, potato salad or egg salad.', actions: [a('See the full menu', P.menu, true), ORDER] }; } },
+      { id: 'sides', w: { side: 2.5, sides: 2.5, potato: 2.5, potatoes: 2.5 }, f: function () { var x = kb.items.filter(function (i) { return /potato/i.test(i.name) && i.section === 'Add-Ons'; }); return { html: 'Our potatoes are under <b>Add-Ons</b>' + list(x, true) + 'Lunch plates come with a side: Chips, Tortilla Chips, Potato Salad or Egg Salad.', speak: 'Our potatoes are under add-ons: ' + speakList(x) + '. Lunch plates come with chips, tortilla chips, potato salad or egg salad.', actions: [a('See the full menu', P.menu, true), CATER] }; } },
       { id: 'addons', w: { addon: 2.5, add: 1.5, extra: 2, topping: 2 }, p: { 'add on': 2.5 }, f: function () { var x = bySection('Add-Ons'); return { html: '<b>Add-Ons</b>' + list(x), speak: 'Add-ons: ' + speakList(x) + '.', actions: [ORDER] }; } },
       { id: 'brunch', w: { brunch: 3, jone: 3, jones: 3, jonesn: 3, ticket: 2.5, event: 1.5, october: 2, oct: 2, '25': 1.5, '25th': 1.5, sunday: 1.2 }, f: function () {
         var cnt = kb.items.filter(function (i) { return i.menu === 'brunch'; }).length;
@@ -157,8 +158,8 @@
         return { html: 'Yes, thank you! Our online checkout offers a tip option, or you can use <b>Tip the Team</b> and enter any amount. 100% of tips go to our crew.',
           speak: 'Yes, thank you! Our online checkout offers a tip option, or you can use Tip the Team and enter any amount. 100 percent of tips go to our crew.', actions: [a('Tip the Team', B.tip || 'https://square.link/u/uTopOf42', true, true)] }; } },
       { id: 'mealprep', w: { meal: 1, prep: 2.5, mealprep: 3, weekly: 1.5, package: 1.5 }, p: { 'meal prep': 3 }, f: function () {
-        return { html: '<b>Custom Meal Prep</b> starts at $13 a meal (5-meal minimum): Starter 5 meals $65, Weekly 10 meals $125, Family 15 meals $180. Build each meal from our Build Your Own menu, order and pay online by Friday 2pm, and pick up Monday 11am–3pm. Local Falmouth delivery coming soon.',
-          speak: 'Custom meal prep starts at 13 dollars a meal, with a 5 meal minimum. Order by Friday at 2 PM and pick up Monday, 11 to 3.', actions: [a('Meal Prep', P.mealprep, true), CALL] }; } },
+        return { html: '<b>Custom Meal Prep</b> starts at $13 a meal (5-meal minimum): Starter 5 meals $65, Weekly 10 meals $125, Family 15 meals $180. Build each meal from our Build Your Own menu, order and pay online by Friday 2pm, and pick up by appointment. Local Falmouth delivery coming soon.',
+          speak: 'Custom meal prep starts at 13 dollars a meal, with a 5 meal minimum. Order by Friday at 2 PM and pick up by appointment.', actions: [a('Meal Prep', P.mealprep, true), CALL] }; } },
       { id: 'catering', w: { catering: 3, cater: 3, caterer: 3, office: 1.5, group: 1.5, private: 2, party: 2, host: 2, celebration: 2, gathering: 2 }, p: { 'private event': 3 }, f: function () {
         return { html: '<b>Catering &amp; private events:</b> host your gathering in our café Monday through Thursday, for up to 50 guests, starting at $25 per person. We also cater on-site for offices, parties and celebrations. Email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a> or call <a href="' + B.tel + '">' + esc(B.phone) + '</a> with your date and guest count.',
           speak: 'We host private events in our café Monday through Thursday for up to 50 guests, starting at 25 dollars per person, and we cater on-site too.', actions: [a('Catering & Private Events', P.catering || 'catering.html', true), MAIL, CALL] }; } },
@@ -176,7 +177,7 @@
         return { html: '<b>Affiliates are coming soon.</b> Buy at Cape Island Café and save at our affiliated and sponsor businesses. Partner discounts are coming soon. Interested in partnering? Email <a href="mailto:' + B.email + '">' + esc(B.email) + '</a>.',
           speak: 'Affiliates are coming soon. Buy at Cape Island Café and save at our affiliated and sponsor businesses. Partner discounts are coming soon.', actions: [a('Affiliates', P.affiliates || 'affiliates.html', true), MAIL] }; } },
       { id: 'reserve', w: { reservation: 3, reserve: 3, book: 1.5, booking: 2, table: 1.5 }, f: function () {
-        return { html: 'Lunch is to go or stay. To ask about reservations or larger groups, call <a href="tel:+17742475263">774-2-ISLAND</a>. Jones’n Sunday Brunch: ' + esc(E.tickets) + '.', speak: 'Lunch is to go or stay. To ask about reservations, call 774-2-ISLAND. For the Sunday brunch, details will be announced.', actions: [CALL, a('View the brunch menu', E.page)] }; } },
+        return { html: 'Open for special events and private catering by appointment. Call <a href="tel:+17742475263">774-2-ISLAND</a> to book. Jones’n Sunday Brunch: ' + esc(E.tickets) + '.', speak: 'Open for special events and private catering by appointment. Call 774-2-ISLAND to book. For the Sunday brunch, details will be announced.', actions: [CALL, ORDER, a('View the brunch menu', E.page)] }; } },
       { id: 'pricerange', w: { expensive: 2, cheap: 2, affordable: 2 }, p: { 'how much': 1, 'price range': 3, 'prices': 1 }, f: function () {
         return { html: 'Lunch soups are $8.00, salads $11.00–$15.00, bowls $12.50–$16.50, wraps $14.00–$14.50, and the Build Your Own Lunch Plate is $14.50. Drinks are $3.50, and our refreshers are $5.00–$5.75.', speak: 'Soups are 8 dollars, salads 11 to 15, bowls 12 50 to 16 50, wraps around 14, and the build your own plate is 14 50.', actions: [a('See the full menu', P.menu, true)] }; } }
     ];
@@ -322,7 +323,7 @@
     });
   }
 
-  bubble('bot', 'Hi! I’m the Cape Island Café helper. Ask me about our lunch menu, prices, hours, ordering, or the upcoming <b>Jones’n Sunday Brunch</b>. Tap a question below or type your own.');
+  bubble('bot', 'Hi! I’m the Cape Island Café helper. Ask me about special events, private catering, our menu, hours, or the upcoming <b>Jones’n Sunday Brunch</b>. Tap a question below or type your own.');
   root.fetch('ask-kb.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (kb) {
     bot = createBot(kb);
     var params = new root.URLSearchParams(root.location.search); var pq = params.get('q');

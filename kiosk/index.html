@@ -92,8 +92,8 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
   // Square Online menu sections (Square category IDs) for location L7Q6A8V9Q0T18.
   var BASE = "https://capeislandcafe.square.site/s/order?location=L7Q6A8V9Q0T18";
   var MENUS = {
-    breakfast: { url: BASE + "&kiosk=breakfast#EBVJDMWTVOJHAWCGQP67RZM2", label: "Breakfast", note: "<b>Breakfast</b> &middot; Mon–Fri 8–10 AM &middot; Tap an item to add it to your order" },
-    lunch:     { url: BASE + "&kiosk=lunch#D4S5QPTN2AB4NSFIC3L2A2ZJ",     label: "Lunch",     note: "<b>Lunch</b> &middot; Mon–Fri until 3 PM &middot; Soups, salads, bowls, wraps &amp; Refreshers" }
+    breakfast: { url: BASE + "&kiosk=breakfast#EBVJDMWTVOJHAWCGQP67RZM2", label: "Breakfast", note: "<b>Breakfast</b> &middot; Available during special events by appointment &middot; Tap an item to add it to your order" },
+    lunch:     { url: BASE + "&kiosk=lunch#D4S5QPTN2AB4NSFIC3L2A2ZJ",     label: "Lunch",     note: "<b>Lunch</b> &middot; Available during special events &amp; private catering by appointment &middot; Soups, salads, bowls, wraps &amp; Refreshers" }
   };
   var IDLE_MS = 90000, WARN_S = 20;
 
@@ -102,7 +102,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
       idle = document.getElementById("idle"), count = document.getElementById("count"),
       btns = document.querySelectorAll(".toggle button"), current = null, idleTimer = null, warnTimer = null;
 
-  // Default: Breakfast. During lunch hours (10 AM–3 PM Mon–Fri, café time) open on Lunch instead.
+  // Default: Breakfast. If the local clock falls in the former weekday lunch window, open on Lunch instead.
   function defaultMenu(){
     try{
       var parts = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",weekday:"short",hour:"numeric",hourCycle:"h23"}).formatToParts(new Date());
